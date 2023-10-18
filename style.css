@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+menu{
+    width: 25vw;
+    height: 100vh;
+    background-color: red;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    transition: width .5s;
+}
+
+menu:hover{
+    width: 0vw;
+}
+
+menu:hover ~ main{
+    width: 100vw;
+}
+
+header{
+    width: 100vw;
+    height: 20vh;
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+main{
+    width: 75vw;
+    height: 80vh;
+    background-color: blue;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transition: width .5s; 
+}
