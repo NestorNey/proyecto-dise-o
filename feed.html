@@ -5,12 +5,46 @@
     <title>Feed</title>
 </head>
 <body>
+
+    <h1 id="logo">MyMusic</h1>
     <header>
-        <h1>Logo</h1>
-        <input type="text">
-        
+        <section id="relleno">
+        </section>
+        <section id="search">
+            <div id="searchBar">
+                <img src="./img/icons/search.svg">
+                <input type="text">
+            </div>
+        </section>
+        <section id="porfile">
+            <section id="porfileMenu" onclick="openPorfileMenu()"> 
+                <img src="./img/porfile/porfile.webp" alt="">
+            </section>
+        </section>
     </header>
-    <menu></menu>
-    <main></main>
+    <main>
+        <menu>
+            <section>
+                <h2>Tus listas</h2>
+                <div class="lista menuCont"><img src="./img/icons/recent.svg"><p>Recientes</p></div>
+                <div class="lista menuCont"><img src="./img/icons/favorite.svg"><p>Favoritos</p></div>
+            </section>
+            <section>
+                <h2>Planes</h2>
+                <div class="plan menuCont"><img src="./img/icons/individualy.svg"><p>Plan individual</p></div>
+                <div class="plan menuCont"><img src="./img/icons/duo.svg"><p>Plan duo</p></div>
+                <div class="plan menuCont"><img src="./img/icons/family.svg"><p>Plan familiar</p></div>
+            </section>
+        </menu>
+        <section id="mainPanel">
+
+        </section>
+    </main>
 </body>
+<script>
+    function openPorfileMenu(){
+        let porfileMenu = document.getElementById("porfileMenu")
+        porfileMenu.classList.toggle("opened")
+    }
+</script>
 </html>

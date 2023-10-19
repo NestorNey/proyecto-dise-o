@@ -1,42 +1,155 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Arial;
 }
 
-menu{
-    width: 25vw;
-    height: 100vh;
-    background-color: red;
+header{
+    display: flex;
+    justify-content: right;
+
+    width: 100vw;
+    height: 16vh;
+
+    background-color: aqua;
+}
+
+header section{
+    display: flex;
+    justify-content: center;
+
+    width: 33%;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    margin-top: -25px;
+    
     position: fixed;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    transition: width .5s;
+    z-index: 10;
+    left: 55px;
+    top: 8vh;
 }
 
-menu:hover{
+header #search{
+    width: 34%;
+    align-items: center;
+}
+
+header #relleno, header #porfile{
+    width: 33%;
+}
+
+header #search #searchBar input{
+    width: 450px;
+    height: 40px;
+
+    border: 2px solid black;
+    border-radius: 15px;
+
+    background-color: unset;
+}
+
+header #search #searchBar img{
+    position: fixed;
+    width: 40px;
+}
+
+header #porfile{
+    justify-content: right;
+    align-self: flex-start;
+}
+
+header #porfile img{
+    width: 50px;
+    height: 50px;
+    margin-top: 7.5px;
+    border-radius: 15px;
+    transition: width .5s, height .5s;
+}
+
+header #porfile #porfileMenu{
+    align-self:self-end;
+    text-align: center;
+
+    width: 50px;
+    height: 65px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: calc(8vh - 32.5px);
+
+    background-color: none;
+    transition: width .8s .8s, height .8s, background-color .5s;
+}
+
+header #porfile #porfileMenu.opened{
+    width: calc(33vw - 50px);
+    height: 500px;
+    background-color: brown;
+
+    transition: width .8s, height .8s .8s, background-color .5s .8s;
+}
+
+header #porfile #porfileMenu.opened > img{
+    width: 70px;
+    height: 70px;
+
+    transition: width .5s .8s, height .5s .8s;
+}
+
+/*menu:hover{
     width: 0vw;
 }
 
 menu:hover ~ main{
     width: 100vw;
-}
-
-header{
-    width: 100vw;
-    height: 20vh;
-    background-color: aqua;
-    position: fixed;
-    top: 0;
-    right: 0;
-}
+}*/
 
 main{
-    width: 75vw;
-    height: 80vh;
+    display: flex;
+
+    width: 100vw;
+    height: 84vh;
     background-color: blue;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+
     transition: width .5s; 
 }
+
+menu{
+    width: 300px;
+    height: 100%;
+
+    overflow: hidden;
+    background-color: red;
+}
+
+menu .menuCont{
+    display: flex;
+    align-items: center;
+    background-color: chartreuse;
+    height: 40px;
+    margin: 5px 0 5px 0;
+}
+
+menu img{
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+menu h2{
+    margin: 10px 0 10px 5px;
+}
+
+#mainPanel{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: blueviolet;
+
+    z-index: -10;
+
+}
+
