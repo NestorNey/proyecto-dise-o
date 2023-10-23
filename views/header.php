@@ -1,3 +1,7 @@
+<?php 
+    $rootDir = "http";
+?>
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./static/css/header.css">
