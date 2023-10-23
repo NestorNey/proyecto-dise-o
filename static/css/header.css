@@ -1,0 +1,183 @@
+/*    Letras claras    */
+header #logo, 
+header #search input, 
+header #porfile h3, 
+header #porfile p,
+header #porfile button{
+    color: white;
+}
+
+/*    Header    */
+
+header{
+    display: flex;
+    justify-content: right;
+
+    width: 100vw;
+    height: 16vh;
+
+    background-color: #382f50;
+}
+
+header section{
+    display: flex;
+    align-items: center;
+
+    width: 33%;
+}
+
+header #logoSec{
+    justify-content: left;
+}
+
+header #search{
+    justify-content: center;
+    width: 34%;
+}
+
+header #porfile{
+    justify-content: right;
+    align-self: flex-start;
+
+    z-index: 1;
+}
+
+header #logoSec, header #porfile{
+    width: 33%;
+}
+
+header #logo{
+    margin-left: 50px;
+
+    font-size: 30px;
+}
+
+header #search #searchbar{
+    display: flex;
+    align-items: center;
+}
+
+header #search #searchBar input{
+    width: 450px;
+    height: 35px;
+    padding-left: 35px;
+
+    font-size: 18px;
+
+    border: 2px solid white;
+    border-radius: 15px;
+
+    background-color: unset;
+}
+
+header #search #searchBar img{
+    width: 25px;
+    margin-right: -30px;
+}
+
+header #porfile img{
+    width: 50px;
+    height: 50px;
+    margin-top: 7.5px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+    transition: width .5s, height .5s;
+}
+
+header #porfile #porfileMenu{
+    display: block;
+    align-self:self-end;
+    text-align: center;
+
+    width: 50px;
+    height: 65px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: calc(8vh - 32.5px);
+
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: none;
+    transition: width .8s .8s, height .8s, background-color .5s, box-shadow .5s;
+}
+
+header #porfile #porfileMenu.opened{
+    width: calc(33vw - 50px);
+    height: 400px;
+    background-color: #382f50;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+
+    transition: width .8s, height .8s .6s, background-color .5s .6s, box-shadow .5s .6s;
+}
+
+header #porfile #porfileMenu.opened > img{
+    width: 70px;
+    height: 70px;
+
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+
+    transition: width .5s .8s, height .5s .8s;
+}
+
+header #porfile #porfileMenu #mail{
+    font-size: 14px;
+}
+
+header #porfile #porfileMenu .option{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    height: 50px;
+    padding-left: 20px;
+
+    cursor: pointer;
+}
+
+header #porfile #porfileMenu .option:hover{
+    background-color: #a4a5ef;
+    color: black;
+}
+
+header #porfileMenu p, #porfileMenu h3, #porfileMenu div{
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+header #porfileMenu.opened p, #porfileMenu.opened h3, #porfileMenu.opened div{
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+header #porfileMenu button{
+    width: 100px;
+    height: 35px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    border: unset;
+}
+
+header #porfileMenu button{
+    cursor: pointer;
+}
+
+header #porfileMenu #config{
+    background-color: #5c7ada;
+}
+
+header #porfileMenu #config:hover{
+    background-color: #a4a5ef;
+    color: black;
+}
+
+header #porfileMenu #closeSession{
+    background-color: unset;
+}
+
+header #porfileMenu #closeSession:hover{
+    background-color: #a4a5ef;
+    color: black;
+}
