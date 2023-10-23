@@ -1,0 +1,99 @@
+#mainPanel .cancion {
+    display: flex;
+    align-items: center;
+    width: 620px;
+    height: 60px;
+    overflow: hidden;
+    background: none;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  #mainPanel .cancion:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  #mainPanel img {
+    height: 60px;
+  }
+  
+  #mainPanel .songInfo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 280px;
+    padding-left: 15px;
+  }
+  
+  #mainPanel .nameAndAlbum{
+    width: 240px;
+  }
+  
+  #mainPanel .nombre {
+    font-weight: 700; /* Cambiar colo de letra */
+    display: flex;
+    align-items: center;
+    height: 50%;
+  }
+  
+  #mainPanel .album {
+    color: rgb(63, 63, 63); /* Cambiar colo de letra */
+    display: flex;
+    align-items: center;
+    height: 50%;
+    font-weight: 100; /* Cambiar colo de letra */
+  }
+  
+  #mainPanel .artista {
+    color: rgb(63, 63, 63); /* Cambiar colo de letra */
+    width: 40px;
+    font-weight: 100; /* Cambiar colo de letra */
+  }
+  
+  #mainPanel #play {
+    margin-left: 80px;
+  }
+  
+  #mainPanel .botones {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 5px 5px;
+  }
+  
+  #mainPanel button span {
+    width: 100%;
+    height: 100%;
+    opacity: 30%;
+    display: flex;
+    align-items: center;
+  }
+  
+  #mainPanel button:hover span {
+    opacity: 1;
+  }
+  
+  #mainPanel #icon3{
+    width: 25px;
+    height: 25px;
+  }
+  
+  #mainPanel #icon1, #mainPanel #icon2{
+    width: 100%;
+    height: 100%;
+  }
+  
+  #mainPanel #main{
+    width: 100%;
+    padding-left: 150px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  #mainPanel h2{
+    margin-bottom: 20px;
+  }
