@@ -1,10 +1,16 @@
 <?php 
-    $rootDir = "http";
+    $rootDir = "http://localhost:80/proyecto-dise-o";
+    
+    if(isset($_GET['showSearchBar']) && $_GET['showSearchBar'] == 'false'){
+        $showSearchBar = false;
+    }else{
+        $showSearchBar = true;
+    }
 ?>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./static/css/header.css">
+    <link rel="stylesheet" href="<?php echo $rootDir; ?>/static/css/header.css">
 </head>
 <header>
     <header>
@@ -12,14 +18,16 @@
             <h1 id="logo">MyMusic</h1>
         </section>
         <section id="search">
+            <?php if($showSearchBar){ ?>
             <div id="searchBar">
-                <img src="./static/img/icons/search.svg">
+                <img src="<?php echo $rootDir; ?>/static/img/icons/search.svg">
                 <input type="text" onkeydown="redirectSearch()">
             </div>
+            <?php }?>
         </section>
         <section id="porfile">
             <section id="porfileMenu" onclick="openPorfileMenu()"> 
-                <img src="./static/img/porfile/porfile.webp" alt="">
+                <img src="<?php echo $rootDir; ?>/static/img/porfile/porfile.webp" alt="">
                 <br>
                 <br>
                 <h3>Jessica Smith</h3>
@@ -35,5 +43,4 @@
         </section>
     </header>
 </header>
-<script type="text/javascript" src="./static/js/buscador.js"></script>
-<script type="text/javascript" src="./static/js/header.js"></script>
+<script type="text/javascript" src="<?php echo $rootDir; ?>/static/js/header.js"></script>
