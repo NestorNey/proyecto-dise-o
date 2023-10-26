@@ -1,0 +1,55 @@
+html,
+body {
+  width: 90%;
+  height: 100%;
+}
+
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 0;
+}
+
+#title h2,
+#title h3 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: white;
+}
+
+#title h3 {
+  font-size: 1.4rem;
+}
+
+#user {
+  position: fixed;
+  right: 3vw;
+  top: 20%;
+  color: rgb(188, 188, 188);
+}
+
+#img-article {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.icon-song {
+  height: 20%;
+  max-width: 70px;
+  cursor: pointer;
+}
+
+#song-img {
+  height: 50%;
+  max-height: 350px;
+}
+
+#pause-article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7vh;
+}

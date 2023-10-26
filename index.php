@@ -19,7 +19,7 @@
         
             <?php require('./views/menu.php'); ?>
 
-            <section id="mainPanel">
+            <section id="mainPanel" class=".swiper-pagination">
                 <?php
                     require("./views/$screen.php");
                 ?>

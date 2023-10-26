@@ -17,7 +17,12 @@
   transform: scale(1.2);
 }
 
-.carousel-box {
+.carousel-icon {
+  height: 50%;
+  max-width: 50px;
+}
+
+.swiper-slide {
   background-color: rgba(231, 249, 255, 0.25);
   color: black;
   display: none;
@@ -28,30 +33,35 @@
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  display: block;
 }
 
-.carousel-box:hover {
+.swiper-slide:hover {
   transform: scale(1.02);
   background-color: rgba(231, 249, 255, 0.5);
 }
 
-.carousel-box img {
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper img {
   margin-bottom: 3vh;
   width: 100%;
   max-width: 150px;
   border-radius: 8px;
 }
 
-.carousel-box p {
+.swiper p {
   margin: 2vh 0 0;
   font-size: 1.2rem;
 }
 
-
-#mainPanel{
+#mainPanel {
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow-y: hidden;
 }

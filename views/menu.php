@@ -16,4 +16,7 @@
         <div class="plan menuCont"><img src="./static/img/icons/duo.svg"><p>Plan duo</p></div>
         <div class="plan menuCont"><img src="./static/img/icons/family.svg"><p>Plan familiar</p></div>
     </section>
+    <section>
+        <div class="lista menuCont" onclick="document.location = './?screen=reproductor'"><p>Reproductor</p></div>
+    </section>
 </menu>

@@ -20,7 +20,7 @@
         if ($input == ''){
           $sql = "SELECT * FROM musica";
         }else {
-          $sql = "SELECT * FROM musica WHERE NombreC='$input'";
+          $sql = "SELECT * FROM musica WHERE NombreC LIKE LOWER('%$input%')";
         }
 
         $fetch = mysqli_query($conection, $sql);
