@@ -20,13 +20,8 @@
         <section id="search">
             <?php if($showSearchBar){ ?>
             <div id="searchBar">
-<<<<<<< Updated upstream
                 <img src="<?php echo $rootDir; ?>/static/img/icons/search.svg">
-                <input type="text" onkeydown="redirectSearch()">
-=======
-                <img src="./static/img/icons/search.svg">
                 <input type="text" onkeydown="redirectSearch(event)" id="search-input">
->>>>>>> Stashed changes
             </div>
             <?php }?>
         </section>
@@ -48,8 +43,4 @@
         </section>
     </header>
 </header>
-<<<<<<< Updated upstream
 <script type="text/javascript" src="<?php echo $rootDir; ?>/static/js/header.js"></script>
-=======
-<script type="text/javascript" src="./static/js/header.js"></script>
->>>>>>> Stashed changes

@@ -9,3 +9,6 @@ const redirectSearch = (event) => {
     document.location = `./?screen=results&input=${input}`;
   }
 };
+
+
+

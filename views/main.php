@@ -13,32 +13,13 @@
     />
 </head>
 <section id="carousel-sec" class=".swiper-pagination">
-    <!-- <button onclick="previous()">
-        <img src="static/img/icons/arrow-prev.svg" alt="next" class="carousel-icon">
-    </button> -->
-
-    <button class="swiper-button-prev"></button>
-
-    <article class="swiper">
-        <div class="swiper-wrapper">
-        <?php 
-            $fetch = mysqli_query($conection, $sql);
-            while($cancion=mysqli_fetch_array($fetch)){
-        ?>
-            <div class="swiper-slide">
-                <img src="./static/img/canciones/album.png" alt="Imagen de album" />
-                <p><?php echo $cancion['NombreC']; ?></p>
-                <p><?php echo $cancion['Artista']; ?></p>
-            </div>
-        <?php } ?>
-        </div>
-    </article>
-
-    <button class="swiper-button-next"></button>
-
-    <!-- <button onclick="next()">
-        <img src="static/img/icons/arrow-next.svg" alt="previous" class="carousel-icon">
-    </button> -->
+   <button id="left">Left</button>
+   <button id="right">Right</button>
+   <section>
+        <p id="leftCart"></p>
+        <p id="mainCart"></p>
+        <p id="rightCart"></p>
+   </section>
 </section>
 <script defer src="./static/js/carrusel.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

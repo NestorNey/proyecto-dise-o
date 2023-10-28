@@ -99,3 +99,54 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+class CarruselInfinito {
+  constructor(numeros) {
+    this.numeros = numeros;
+    this.apuntador = 0;
+  }
+
+  next() {
+    this.apuntador = (this.apuntador + 1) % this.numeros.length;
+    return this.numeros[this.apuntador];
+  }
+
+  prev() {
+    this.apuntador = (this.apuntador - 1 + this.numeros.length) % this.numeros.length;
+    return this.numeros[this.apuntador];
+  }
+}
+
+// Ejemplo de uso
+const numeros = [1, 2, 3, 4, 5];
+const carrusel = new CarruselInfinito(numeros);
+
+const left = document.getElementById('left')
+const right = document.getElementById('right')
+
+const leftCart = document.getElementById('leftCart')
+const mainCart = document.getElementById('mainCart')
+const rightCart = document.getElementById('rightCart')
+
+left.addEventListener('click', () => {
+  console.log(carrusel.prev());
+  leftCart.innerText = carrusel.numeros[(carrusel.apuntador - 1 + carrusel.numeros.length) % carrusel.numeros.length];
+  rightCart.innerText = carrusel.numeros[(carrusel.apuntador + 1) % carrusel.numeros.length];
+  mainCart.innerText = carrusel.numeros[carrusel.apuntador];
+})
+
+right.addEventListener('click', () => {
+  console.log(carrusel.next());
+  leftCart.innerText = carrusel.numeros[(carrusel.apuntador - 1 + carrusel.numeros.length) % carrusel.numeros.length];
+  rightCart.innerText = carrusel.numeros[(carrusel.apuntador + 1) % carrusel.numeros.length];
+  mainCart.innerText = carrusel.numeros[carrusel.apuntador];
+})
+
+
+/*for (let i = 0; i < 10; i++) {
+  console.log(carrusel.next());
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(carrusel.prev());
+}*/
