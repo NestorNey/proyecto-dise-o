@@ -100,7 +100,7 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-class CarruselInfinito {
+/*class CarruselInfinito {
   constructor(numeros) {
     this.numeros = numeros;
     this.apuntador = 0;
@@ -115,24 +115,54 @@ class CarruselInfinito {
     this.apuntador = (this.apuntador - 1 + this.numeros.length) % this.numeros.length;
     return this.numeros[this.apuntador];
   }
-}
+}*/
 
 // Ejemplo de uso
-const numeros = [1, 2, 3, 4, 5];
-const carrusel = new CarruselInfinito(numeros);
+const numeros = [0, 1, 2, 3, 4]
+var apuntador = 0
+//const carrusel = new CarruselInfinito(numeros);
+const cSongs = document.getElementsByClassName('cSong')
 
 const left = document.getElementById('left')
 const right = document.getElementById('right')
 
-const leftCart = document.getElementById('leftCart')
+/*const leftCart = document.getElementById('leftCart')
 const mainCart = document.getElementById('mainCart')
-const rightCart = document.getElementById('rightCart')
+const rightCart = document.getElementById('rightCart')*/
+
+function next() {
+  apuntador = (apuntador + 1) % numeros.length;
+  return numeros[apuntador];
+}
+
+function prev() {
+  apuntador = (apuntador - 1 + numeros.length) % numeros.length;
+  return numeros[apuntador];
+}
 
 left.addEventListener('click', () => {
-  console.log(carrusel.prev());
-  leftCart.innerText = carrusel.numeros[(carrusel.apuntador - 1 + carrusel.numeros.length) % carrusel.numeros.length];
+  prev()
+
+  console.log(numeros[(apuntador - 1 + numeros.length) % numeros.length])
+  console.log(numeros[apuntador])
+  console.log(numeros[(apuntador + 1) % numeros.length])
+
+  cSongs.item(numeros[(apuntador - 1 + numeros.length) % numeros.length]).style.display = "block"
+  cSongs.item(numeros[apuntador]).style.display = "block"
+  cSongs.item(numeros[(apuntador + 1) % numeros.length]).style.display = "block"
+
+  for (let i = 0; i < cSongs.length; i++) {
+    if(i != numeros[(apuntador - 1 + numeros.length) % numeros.length] &&
+        i != numeros[apuntador] &&
+        i != numeros[(apuntador + 1) % numeros.length]){
+
+      cSongs.item(i).style.display = "none"
+    }
+  }
+  
+  /*leftCart.innerText = carrusel.numeros[(carrusel.apuntador - 1 + carrusel.numeros.length) % carrusel.numeros.length];
   rightCart.innerText = carrusel.numeros[(carrusel.apuntador + 1) % carrusel.numeros.length];
-  mainCart.innerText = carrusel.numeros[carrusel.apuntador];
+  mainCart.innerText = carrusel.numeros[carrusel.apuntador];*/
 })
 
 right.addEventListener('click', () => {
