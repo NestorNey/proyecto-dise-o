@@ -1,182 +1,86 @@
-// const previous = () => {
-//     if (selected == 0) {
-//         allObjects[selected3].style.display = "none";
-//         selected = allObjects.length - 1;
-//         selected2 -= 1;
-//         selected3 -= 1;
-//         applyDisplay();
-//         return 0;
-//     }
+let songs = [];
+let apuntador = 0;
+let timerId = 0;
 
-//     if (selected2 == 0) {
-//         allObjects[selected3].style.display = "none";
-//         selected -= 1;
-//         selected2 = allObjects.length - 1;
-//         selected3 -= 1;
-//         applyDisplay();
-//         return 0;
-//     }
+const left = document.getElementById('left');
+const right = document.getElementById('right');
 
-//     if (selected3 == 0) {
-//         allObjects[selected3].style.display = "none";
-//         selected -= 1;
-//         selected2 -= 1;
-//         selected3 = allObjects.length - 1;
-//         applyDisplay();
-//         return 0;
-//     }
+const leftCart = {
+    title: document.getElementById('lcTitle'),
+    artist: document.getElementById('lcArtist'),
+    album: document.getElementById('lcAlbum')
+}
 
-//     allObjects[selected3].style.display = "none";
-//     selected -= 1;
-//     selected2 -= 1;
-//     selected3 -= 1;
-//     applyDisplay();
-// };
+const mainCart = {
+    title: document.getElementById('mcTitle'),
+    artist: document.getElementById('mcArtist'),
+    album: document.getElementById('mcAlbum')
+}
 
-// const next = () => {
-//     if (selected3 == allObjects.length - 1) {
-//         allObjects[selected].style.display = "none";
-//         selected += 1;
-//         selected2 += 1;
-//         selected3 = 0;
-//         applyDisplay();
-//         return 0;
-//     }
+const rightCart = {
+    title: document.getElementById('rcTitle'),
+    artist: document.getElementById('rcArtist'),
+    album: document.getElementById('rcAlbum')
+}
 
-//     if (selected2 == allObjects.length - 1) {
-//         allObjects[selected].style.display = "none";
-//         selected += 1;
-//         selected2 = 0;
-//         selected3 += 1;
-//         applyDisplay();
-//         return 0;
-//     }
+async function fetchData() {
+    try {
+        const response = await fetch('./api/getCarouselSongs.php');
+        songs = await response.json();
+    } catch (error) {
+        console.error('Error al cargar las canciones:', error);
+    }
+}
 
-//     if (selected == allObjects.length - 1) {
-//         allObjects[selected].style.display = "none";
-//         selected = 0;
-//         selected2 += 1;
-//         selected3 += 1;
-//         applyDisplay();
-//         return 0;
-//     }
+function updateSongDisplay() {
+    let leftSong = songs[(apuntador - 1 + songs.length) % songs.length]
+    leftCart.album = leftSong.album
+    leftCart.artist = leftSong.artista
+    leftCart.title = leftSong.nombre
 
-//     allObjects[selected].style.display = "none";
-//     selected += 1;
-//     selected2 += 1;
-//     selected3 += 1;
-//     applyDisplay();
-// };
+    let mainSong = songs[apuntador]
+    mainCart.album = mainSong.album
+    mainCart.artist = mainSong.artista
+    mainCart.title = mainSong.nombre
 
-// const applyDisplay = () => {
-//     allObjects[selected].style.display = "flex";
-//     allObjects[selected2].style.display = "flex";
-//     allObjects[selected3].style.display = "flex";
-// };
+    let rightSong = songs[(apuntador + 1) % songs.length]
+    rightCart.album = rightSong.album
+    rightCart.artist = rightSong.artista
+    rightCart.title = rightSong.nombre
 
-// var allObjects = document.getElementsByClassName("carousel-box");
-// var selected = 0;
-// var selected2 = 1;
-// var selected3 = 2;
-
-// allObjects[selected].style.display = "flex";
-// allObjects[selected2].style.display = "flex";
-// allObjects[selected3].style.display = "flex";
-
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-/*class CarruselInfinito {
-  constructor(numeros) {
-    this.numeros = numeros;
-    this.apuntador = 0;
-  }
-
-  next() {
-    this.apuntador = (this.apuntador + 1) % this.numeros.length;
-    return this.numeros[this.apuntador];
-  }
-
-  prev() {
-    this.apuntador = (this.apuntador - 1 + this.numeros.length) % this.numeros.length;
-    return this.numeros[this.apuntador];
-  }
-}*/
-
-// Ejemplo de uso
-const numeros = [0, 1, 2, 3, 4]
-var apuntador = 0
-//const carrusel = new CarruselInfinito(numeros);
-const cSongs = document.getElementsByClassName('cSong')
-
-const left = document.getElementById('left')
-const right = document.getElementById('right')
-
-/*const leftCart = document.getElementById('leftCart')
-const mainCart = document.getElementById('mainCart')
-const rightCart = document.getElementById('rightCart')*/
+    /*rightCart.innerText = songs[(apuntador + 1) % songs.length].nombre;
+    mainCart.innerText = songs[apuntador].nombre;*/
+}
 
 function next() {
-  apuntador = (apuntador + 1) % numeros.length;
-  return numeros[apuntador];
+    apuntador = (apuntador + 1) % songs.length;
+    return songs[apuntador];
 }
 
 function prev() {
-  apuntador = (apuntador - 1 + numeros.length) % numeros.length;
-  return numeros[apuntador];
+    apuntador = (apuntador - 1 + songs.length) % songs.length;
+    return songs[apuntador];
 }
 
-left.addEventListener('click', () => {
-  prev()
+async function main() {
+    await fetchData();
 
-  console.log(numeros[(apuntador - 1 + numeros.length) % numeros.length])
-  console.log(numeros[apuntador])
-  console.log(numeros[(apuntador + 1) % numeros.length])
+    if (songs.length > 0) {
+        left.addEventListener('click', () => {
+            console.log(prev());
+            updateSongDisplay();
+        });
 
-  cSongs.item(numeros[(apuntador - 1 + numeros.length) % numeros.length]).style.display = "block"
-  cSongs.item(numeros[apuntador]).style.display = "block"
-  cSongs.item(numeros[(apuntador + 1) % numeros.length]).style.display = "block"
+        right.addEventListener('click', () => {
+            console.log(next());
+            updateSongDisplay();
+        });
 
-  for (let i = 0; i < cSongs.length; i++) {
-    if(i != numeros[(apuntador - 1 + numeros.length) % numeros.length] &&
-        i != numeros[apuntador] &&
-        i != numeros[(apuntador + 1) % numeros.length]){
-
-      cSongs.item(i).style.display = "none"
+        // Muestra la primera canción al inicio
+        //updateSongDisplay();
+    } else {
+        console.log('No se encontraron canciones.');
     }
-  }
-  
-  /*leftCart.innerText = carrusel.numeros[(carrusel.apuntador - 1 + carrusel.numeros.length) % carrusel.numeros.length];
-  rightCart.innerText = carrusel.numeros[(carrusel.apuntador + 1) % carrusel.numeros.length];
-  mainCart.innerText = carrusel.numeros[carrusel.apuntador];*/
-})
-
-right.addEventListener('click', () => {
-  console.log(carrusel.next());
-  leftCart.innerText = carrusel.numeros[(carrusel.apuntador - 1 + carrusel.numeros.length) % carrusel.numeros.length];
-  rightCart.innerText = carrusel.numeros[(carrusel.apuntador + 1) % carrusel.numeros.length];
-  mainCart.innerText = carrusel.numeros[carrusel.apuntador];
-})
-
-
-/*for (let i = 0; i < 10; i++) {
-  console.log(carrusel.next());
 }
 
-for (let i = 0; i < 10; i++) {
-  console.log(carrusel.prev());
-}*/
+main();
