@@ -20,7 +20,7 @@ main{
 }
 
 #mainPanel{
-    width: 100%;
+    width: 75vw;
     height: 100%;
 
     overflow-y: scroll;

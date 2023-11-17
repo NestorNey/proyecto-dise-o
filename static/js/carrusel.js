@@ -34,19 +34,19 @@ async function fetchData() {
 
 function updateSongDisplay() {
     let leftSong = songs[(apuntador - 1 + songs.length) % songs.length]
-    leftCart.album = leftSong.album
-    leftCart.artist = leftSong.artista
-    leftCart.title = leftSong.nombre
+    leftCart.album.innerText = leftSong.album
+    leftCart.artist.innerText = leftSong.artista
+    leftCart.title.innerText = leftSong.nombre
 
     let mainSong = songs[apuntador]
-    mainCart.album = mainSong.album
-    mainCart.artist = mainSong.artista
-    mainCart.title = mainSong.nombre
+    mainCart.album.innerText = mainSong.album
+    mainCart.artist.innerText = mainSong.artista
+    mainCart.title.innerText = mainSong.nombre
 
     let rightSong = songs[(apuntador + 1) % songs.length]
-    rightCart.album = rightSong.album
-    rightCart.artist = rightSong.artista
-    rightCart.title = rightSong.nombre
+    rightCart.album.innerText = rightSong.album
+    rightCart.artist.innerText = rightSong.artista
+    rightCart.title.innerText = rightSong.nombre
 
     /*rightCart.innerText = songs[(apuntador + 1) % songs.length].nombre;
     mainCart.innerText = songs[apuntador].nombre;*/
@@ -69,18 +69,40 @@ async function main() {
         left.addEventListener('click', () => {
             console.log(prev());
             updateSongDisplay();
+            console.clear()
+            console.log(leftCart)
+            console.log(mainCart)
+            console.log(rightCart)
         });
 
         right.addEventListener('click', () => {
             console.log(next());
             updateSongDisplay();
+            console.clear()
+            console.log(leftCart)
+            console.log(mainCart)
+            console.log(rightCart)
         });
 
         // Muestra la primera canción al inicio
-        //updateSongDisplay();
+        updateSongDisplay();
     } else {
         console.log('No se encontraron canciones.');
     }
 }
 
+function slideRightCarousel(){
+  
+}
+
 main();
+
+const hiddenCart = document.getElementById("hiddenCart")
+
+hiddenCart.addEventListener("click", (event)=>{
+  hiddenCart.style.transitionDuration = ".5s"
+})
+
+hiddenCart.addEventListener("mouseover", (event)=>{
+  hiddenCart.classList.toggle("show")
+})
