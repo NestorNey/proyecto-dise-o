@@ -1,26 +1,43 @@
 let songs = [];
 let apuntador = 0;
-let timerId = 0;
+let isTimerFinished = true;
 
 const left = document.getElementById('left');
 const right = document.getElementById('right');
 
+const hiddenLeftCart = {
+    cart: document.getElementById("hiddenLeftCart"),
+    title: document.getElementById('hlcTitle'),
+    artist: document.getElementById('hlcArtist'),
+    album: document.getElementById('hlcAlbum')
+}
+
 const leftCart = {
+    cart: document.getElementById("leftCart"),
     title: document.getElementById('lcTitle'),
     artist: document.getElementById('lcArtist'),
     album: document.getElementById('lcAlbum')
 }
 
 const mainCart = {
+    cart: document.getElementById("mainCart"),
     title: document.getElementById('mcTitle'),
     artist: document.getElementById('mcArtist'),
     album: document.getElementById('mcAlbum')
 }
 
 const rightCart = {
+    cart: document.getElementById("rightCart"),
     title: document.getElementById('rcTitle'),
     artist: document.getElementById('rcArtist'),
     album: document.getElementById('rcAlbum')
+}
+
+const hiddenRightCart = {
+    cart: document.getElementById("hiddenRightCart"),
+    title: document.getElementById('hrcTitle'),
+    artist: document.getElementById('hrcArtist'),
+    album: document.getElementById('hrcAlbum')
 }
 
 async function fetchData() {
@@ -33,12 +50,18 @@ async function fetchData() {
 }
 
 function updateSongDisplay() {
+    let hiddenLeftSong = songs[(apuntador - 2 + songs.length) % songs.length]
+    hiddenLeftCart.album.innerText = hiddenLeftSong.album
+    hiddenLeftCart.artist.innerText = hiddenLeftSong.artista
+    hiddenLeftCart.title.innerText = hiddenLeftSong.nombre
+
     let leftSong = songs[(apuntador - 1 + songs.length) % songs.length]
     leftCart.album.innerText = leftSong.album
     leftCart.artist.innerText = leftSong.artista
     leftCart.title.innerText = leftSong.nombre
 
     let mainSong = songs[apuntador]
+    mainCart.cart.style.filter = "brightness(100%)"
     mainCart.album.innerText = mainSong.album
     mainCart.artist.innerText = mainSong.artista
     mainCart.title.innerText = mainSong.nombre
@@ -48,18 +71,62 @@ function updateSongDisplay() {
     rightCart.artist.innerText = rightSong.artista
     rightCart.title.innerText = rightSong.nombre
 
-    /*rightCart.innerText = songs[(apuntador + 1) % songs.length].nombre;
-    mainCart.innerText = songs[apuntador].nombre;*/
+    let hiddenRightSong = songs[(apuntador + 2) % songs.length]
+    hiddenRightCart.album.innerText = hiddenRightSong.album
+    hiddenRightCart.artist.innerText = hiddenRightSong.artista
+    hiddenRightCart.title.innerText = hiddenRightSong.nombre
 }
 
 function next() {
-    apuntador = (apuntador + 1) % songs.length;
-    return songs[apuntador];
+    hiddenLeftCart.cart.classList.add("right")
+    leftCart.cart.classList.add("right")
+    leftCart.cart.style.filter = "brightness(100%)"
+    mainCart.cart.classList.add("right")
+    mainCart.cart.style.filter = "brightness(50%) blur(1px)"
+    rightCart.cart.classList.add("right")
+    hiddenRightCart.cart.classList.add("right")
+
+    if(isTimerFinished){
+        isTimerFinished = false
+        setTimeout(() => {
+            hiddenLeftCart.cart.classList.remove("right")
+            leftCart.cart.classList.remove("right")
+            leftCart.cart.style.filter = "brightness(50%) blur(1px)"
+            mainCart.cart.classList.remove("right")
+            mainCart.cart.style.filter = "brightness(100%)"
+            rightCart.cart.classList.remove("right")
+            hiddenRightCart.cart.classList.remove("right")
+            apuntador = (apuntador - 1 + songs.length) % songs.length;
+            updateSongDisplay();
+            isTimerFinished = true
+        }, 1000);
+    }
 }
 
 function prev() {
-    apuntador = (apuntador - 1 + songs.length) % songs.length;
-    return songs[apuntador];
+    hiddenLeftCart.cart.classList.add("left")
+    leftCart.cart.classList.add("left")
+    mainCart.cart.classList.add("left")
+    mainCart.cart.style.filter = "brightness(50%) blur(1px)"
+    rightCart.cart.classList.add("left")
+    rightCart.cart.style.filter = "brightness(100%)"
+    hiddenRightCart.cart.classList.add("left")
+
+    if(isTimerFinished){
+        isTimerFinished = false
+        setTimeout(() => {
+            hiddenLeftCart.cart.classList.remove("left")
+            leftCart.cart.classList.remove("left")
+            mainCart.cart.classList.remove("left")
+            mainCart.cart.style.filter = "brightness(100%)"
+            rightCart.cart.classList.remove("left")
+            rightCart.cart.style.filter = "brightness(50%) blur(1px)"
+            hiddenRightCart.cart.classList.remove("left")
+            apuntador = (apuntador + 1) % songs.length;
+            updateSongDisplay();
+            isTimerFinished = true
+        }, 1000);
+    }
 }
 
 async function main() {
@@ -67,42 +134,18 @@ async function main() {
 
     if (songs.length > 0) {
         left.addEventListener('click', () => {
-            console.log(prev());
-            updateSongDisplay();
-            console.clear()
-            console.log(leftCart)
-            console.log(mainCart)
-            console.log(rightCart)
+            prev()
         });
 
         right.addEventListener('click', () => {
-            console.log(next());
-            updateSongDisplay();
-            console.clear()
-            console.log(leftCart)
-            console.log(mainCart)
-            console.log(rightCart)
+            next()
         });
 
-        // Muestra la primera canción al inicio
-        updateSongDisplay();
     } else {
         console.log('No se encontraron canciones.');
     }
-}
-
-function slideRightCarousel(){
-  
+    
+    updateSongDisplay()
 }
 
 main();
-
-const hiddenCart = document.getElementById("hiddenCart")
-
-hiddenCart.addEventListener("click", (event)=>{
-  hiddenCart.style.transitionDuration = ".5s"
-})
-
-hiddenCart.addEventListener("mouseover", (event)=>{
-  hiddenCart.classList.toggle("show")
-})
