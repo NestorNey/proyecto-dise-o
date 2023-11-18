@@ -134,11 +134,11 @@ async function main() {
 
     if (songs.length > 0) {
         left.addEventListener('click', () => {
-            prev()
+            next()
         });
 
         right.addEventListener('click', () => {
-            next()
+            prev()
         });
 
     } else {

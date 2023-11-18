@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./static/css/carrusel.css" />
 </head>
 <section id="carousel-sec" class=".swiper-pagination">
+    <h2>Descubre canciones nuevas</h2>
     <img id="left" src="./static/img/icons/arrow.svg">
     <section id="interCarousel">
         <article class="cSong" id="hiddenLeftCart">
