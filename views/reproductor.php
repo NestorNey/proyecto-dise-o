@@ -1,3 +1,18 @@
+<?php 
+  require_once 'conection.php';
+
+  if(isset($_GET['songName'])){
+    $songName = $_GET['songName'];
+  }else{
+    $songName = 'No se encontro la canción solicitada';
+  }
+
+  $sql = "SELECT * FROM musica WHERE NombreC='$songName'";
+
+  $fetch = mysqli_query($conection, $sql);
+  $song = mysqli_fetch_array($fetch);
+?>
+
 <head>
   <link rel="stylesheet" href="./static/css/reproductor.css">
 </head>
@@ -5,8 +20,8 @@
 <section id="player-section">
   <article class="music-player-container">
     <div class="title-music-container">
-        <h4 class="song-title">Dreamer</h4>
-        <span class="song-author">Laufey</span>
+        <h4 class="song-title"><?php echo $song['NombreC']; ?></h4>
+        <span class="song-author"><?php echo $song['Artista']; ?></span>
     </div>
     <div class="controls-music-container">
         <div class="progress-song-container">
@@ -19,7 +34,7 @@
             <span class="time-left" id="SongLength"></span>
         </div>
     </div>
-    <audio controls preload="metadata" src="./static/songs/Dreamer.mp3"></audio>
+    <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['NombreC']; ?>"></audio>
     <div class="main-song-controls">
         <img src="./static/img/icons/backward-step-svgrepo-com.svg" alt="prev" class="icon" id="Back10">
         <img src="./static/img/icons/play.svg" alt="play" class="icon" id="PlayPause">
@@ -29,36 +44,3 @@
 </section>
 
 <script src="<?php echo $rootDir; ?>/static/js/reproductor.js"></script>
-
-<!-- <section>
-  <article id="title">
-    <div>
-      <h2>Titulo de cancion</h2>
-      <h3>Artista</h3>
-    </div>
-    <p id="user">Uploaded by "user"</p>
-  </article>
-  <article id="img-article">
-    <img
-      src="./static/img/icons/backward-step-svgrepo-com.svg"
-      alt="backwards"
-      class="icon-song"
-    />
-    <img src="./static/img/canciones/album.png" alt="cancion" id="song-img"/>
-    <img
-      src="./static/img/icons/forward-step-svgrepo-com.svg"
-      alt="forwards"
-      class="icon-song"
-    />
-  </article>
-  <article id="pause-article">
-    <div>icono de pausa</div>
-  </article>
-</section>
-<section>
-  <article>
-    <audio>
-      <source src="./static/songs/provSong.mp3" type="audio/mpeg">
-    </audio>
-  </article>
-</section> -->
