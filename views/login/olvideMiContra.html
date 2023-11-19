@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Olvide mi contraseña</title>
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Tienda de Cubos</h1>
+        </section>
+        <nav>
+            <ul id="ul-nav">
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../form.html">formulario</a></li>
+                <li><a href="../categorias/categoria3x3.php">Categoria 3x3</a></li>
+                <li><a href="../categorias/categoriaPiezas.php">Categoria muchas piezas</a></li>
+                <li><a href="../categorias/categoriaDeformed.php">Categoria deformados</a></li>
+                <li><a href="../categorias/categoriaOtros.php">Categoria otras formas</a></li>
+            </ul>
+            <i class="bi bi-list" id="hamburguer"></i>
+        </nav>
+    </header>
+    <main id="form-main">
+        <h2>Cambiar contraseña</h2>
+        <form action="nuevaContra.php" method="POST" id="form-insert">
+            <div>
+                <a href="registro.html" class="red-btn a-btn">Registrarse</a>
+                <a href="iniciose.html" class="red-btn a-btn">Iniciar Sesión</a>
+            </div>
+
+            <label for="user">Usuario</label>
+            <input type="text" name="user" placeholder="Usuario" class="input">
+
+            <label for="pass">Nueva contraseña</label>
+            <input type="password" name="pass" placeholder="Nueva contraseña" class="input">
+
+            <label for="pass2">Confirmar nueva contraseña</label>
+            <input type="password" name="pass2" placeholder="Confirmar nueva contraseña" class="input">
+
+            <a href="iniciose.html" class="olvide">Regresar</a>
+
+            <div id="redbtns">
+                <input type="submit" class="red-btn" value="Iniciar sesión">
+                <input type="reset" class="red-btn">
+            </div>
+        </form>
+    </main>
+</body>
+<script type="text/javascript" defer src="../header.js"></script>
+</html>

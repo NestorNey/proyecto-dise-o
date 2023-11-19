@@ -6,6 +6,8 @@
     }else{
         $showSearchBar = true;
     }
+
+    session_start();
 ?>
 
 <head>
@@ -26,20 +28,30 @@
             <?php }?>
         </section>
         <section id="porfile">
-            <section id="porfileMenu" onclick="openPorfileMenu()"> 
-                <img src="<?php echo $rootDir; ?>/static/img/porfile/porfile.webp" alt="">
-                <br>
-                <br>
-                <h3>Jessica Smith</h3>
-                <p id="mail">correo@correo.com</p>
-                <br>
-                <p class="option">Plan actual: Gratuito</p>
-                <p class="option">Actualizar plan</p>
-                <p class="option">Politica de privacidad</p>
-                <br>
-                <br>
-                <div><button id="config" class="porfileButton">Configuracion</button><button id="closeSession" class="porfileButton">Cerrar sesion</button></div>
-            </section>
+            <?php if(!isset($_SESSION['user'])){ ?>
+                <section>
+                    <button onclick="redirectLogin()">Log In</button>
+                    <button onclick="redirectSignin()">Sign In</button>
+                </section>
+            <?php }else { ?>
+                <section id="porfileMenu" onclick="openPorfileMenu()"> 
+                    <img src="<?php echo $rootDir; ?>/static/img/users/<?php echo $_SESSION['imgName'] ?>" alt="">
+                    <br>
+                    <br>
+                    <h3><?php echo $_SESSION['user']; ?></h3>
+                    <p id="mail"><?php echo $_SESSION['mail']; ?></p>
+                    <br>
+                    <p class="option">Plan actual: Gratuito</p>
+                    <p class="option">Actualizar plan</p>
+                    <p class="option">Politica de privacidad</p>
+                    <br>
+                    <br>
+                    <div>
+                        <button id="config" class="porfileButton" onclick="redirectProfile()">Mi perfil</button>
+                        <button id="closeSession" class="porfileButton" onclick="redirectCloseSession()">Cerrar sesion</button>
+                    </div>
+                </section>
+            <?php } ?>
         </section>
     </header>
 </header>

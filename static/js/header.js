@@ -10,5 +10,18 @@ const redirectSearch = (event) => {
   }
 };
 
+const redirectLogin = () => {
+  document.location = `./?screen=login/login`;
+};
 
+const redirectSignin = () => {
+  document.location = `./?screen=login/signin`;
+};
 
+const redirectCloseSession = () => {
+  document.location = `./?screen=login/close`;
+};
+
+const redirectProfile = () => {
+  document.location = `./?screen=profile`;
+};
