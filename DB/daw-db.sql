@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 03-11-2023 a las 18:16:51
--- Versión del servidor: 8.0.31
--- Versión de PHP: 8.0.26
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 21, 2023 at 04:28 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `daw-db`
+-- Database: `daw-db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `musica`
+-- Table structure for table `musica`
 --
 
 DROP TABLE IF EXISTS `musica`;
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `musica` (
   `NombreUser` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Album` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `musica`
+-- Dumping data for table `musica`
 --
 
 INSERT INTO `musica` (`ID`, `NombreC`, `Artista`, `Genero`, `Descripcion`, `img`, `NombreUser`, `Album`) VALUES
@@ -49,12 +49,12 @@ INSERT INTO `musica` (`ID`, `NombreC`, `Artista`, `Genero`, `Descripcion`, `img`
 (2, 'Enamorado tuyo.mp3', 'El Cuarteto de Nos', 'Rock alternativo', 'Lo mejor del album \"Porfiado\"', 'Porfiado_Cuarteto_Nos.jpg', 'usuario2', 'Porfiado'),
 (3, 'Lo malo de ser bueno.mp3', 'El Cuarteto de Nos', 'Rock alternativo', 'Lo mejor del album \"Porfiado\"', 'Porfiado_Cuarteto_Nos.jpg', 'usuario3', 'Porfiado'),
 (4, 'Dreamer.mp3', 'Laufey', 'jazz', 'cancion popular de Laufey', 'Laufey Dreamer.jpg', 'usuario4', 'Bewitched'),
-(5, 'From The Start.mp3', 'Laufey', 'Bossa nova', 'De las mejores canciones de Luafey', 'Laufey From the Start.jpg', 'usuario5', 'Bewitched'),
+(5, 'From The Start.mp3', 'Laufey', 'Bossa nova', 'De las mejores canciones de Luafey', 'Laufey From the Start.jpg', 'usuario5', 'Bewitched');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -62,14 +62,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `UserName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Correo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `Contraseña` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `FechaNac` date NOT NULL,
-  `Edad` int NOT NULL,
-  `Tel` int NOT NULL,
+  `Img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `Contrasena` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `UltimasEscuchadas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci,
   `Favoritos` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci,
   PRIMARY KEY (`UserName`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`Nombre`, `UserName`, `Correo`, `Img`, `Contrasena`, `UltimasEscuchadas`, `Favoritos`) VALUES
+('Adriel', 'Cubos', 'Email@gmail.com', 'logo colors cambiados.jpg', '$2y$15$8X7wgzEtbkSzn2569BrTxeHfZyhepCcFtoCfSpiULHf7M1MRbk1eu', NULL, NULL),
+('qq', 'qq', 'qq', 'me.jpg', '$2y$15$xLmPhkyAHL2ynHQno/rLT.e7SO8namF4VKIJ6W0BZd1Fi7Fjk4iE2', NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
