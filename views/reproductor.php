@@ -1,5 +1,6 @@
 <?php 
-  require_once 'conection.php';
+  require 'conection.php';
+  require './api/addSongToList.php';
 
   if(isset($_GET['songName'])){
     $songName = $_GET['songName'];
@@ -13,6 +14,15 @@
   $song = mysqli_fetch_array($fetch);
 
   $songName = str_replace(".mp3", "", $songName);
+  $songToSave = array(
+    "ID" => $song['ID'],
+    "NombreC" => $song['NombreC'],
+    "Artista" => $song['Artista'],
+    "Album" => $song['Album'],
+    "img" => $song['img']
+  );
+  
+  addSongToList("UltimasEscuchadas", $songToSave, "Neepoke");
 ?>
 
 <head>

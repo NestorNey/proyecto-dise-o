@@ -20,7 +20,8 @@ while ($song = mysqli_fetch_array($query)) {
     array_push($result, array(
         "nombre" => $song["NombreC"],
         "artista" => $song["Artista"],
-        "album" => $song["Album"]
+        "album" => $song["Album"],
+        "img" => $song["img"]
     ));
 }
 

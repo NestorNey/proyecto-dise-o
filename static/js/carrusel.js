@@ -9,35 +9,40 @@ const hiddenLeftCart = {
     cart: document.getElementById("hiddenLeftCart"),
     title: document.getElementById('hlcTitle'),
     artist: document.getElementById('hlcArtist'),
-    album: document.getElementById('hlcAlbum')
+    album: document.getElementById('hlcAlbum'),
+    img: document.getElementById('hlcImg')
 }
 
 const leftCart = {
     cart: document.getElementById("leftCart"),
     title: document.getElementById('lcTitle'),
     artist: document.getElementById('lcArtist'),
-    album: document.getElementById('lcAlbum')
+    album: document.getElementById('lcAlbum'),
+    img: document.getElementById('lcImg')
 }
 
 const mainCart = {
     cart: document.getElementById("mainCart"),
     title: document.getElementById('mcTitle'),
     artist: document.getElementById('mcArtist'),
-    album: document.getElementById('mcAlbum')
+    album: document.getElementById('mcAlbum'),
+    img: document.getElementById('mcImg')
 }
 
 const rightCart = {
     cart: document.getElementById("rightCart"),
     title: document.getElementById('rcTitle'),
     artist: document.getElementById('rcArtist'),
-    album: document.getElementById('rcAlbum')
+    album: document.getElementById('rcAlbum'),
+    img: document.getElementById('rcImg')
 }
 
 const hiddenRightCart = {
     cart: document.getElementById("hiddenRightCart"),
     title: document.getElementById('hrcTitle'),
     artist: document.getElementById('hrcArtist'),
-    album: document.getElementById('hrcAlbum')
+    album: document.getElementById('hrcAlbum'),
+    img: document.getElementById('hrcImg')
 }
 
 async function fetchData() {
@@ -54,27 +59,32 @@ function updateSongDisplay() {
     hiddenLeftCart.album.innerText = hiddenLeftSong.album
     hiddenLeftCart.artist.innerText = hiddenLeftSong.artista
     hiddenLeftCart.title.innerText = hiddenLeftSong.nombre
+    //hiddenLeftCart.img.setAttribute("src", "http://localhost:80/proyecto-dise-o/static/img/canciones/" + hiddenLeftSong.img)
 
     let leftSong = songs[(apuntador - 1 + songs.length) % songs.length]
     leftCart.album.innerText = leftSong.album
     leftCart.artist.innerText = leftSong.artista
     leftCart.title.innerText = leftSong.nombre
+    //leftCart.img.setAttribute("src", "http://localhost:80/proyecto-dise-o/static/img/canciones/" + leftSong.img)
 
     let mainSong = songs[apuntador]
     mainCart.cart.style.filter = "brightness(100%)"
     mainCart.album.innerText = mainSong.album
     mainCart.artist.innerText = mainSong.artista
     mainCart.title.innerText = mainSong.nombre
+    //mainCart.img.setAttribute("src", "http://localhost:80/proyecto-dise-o/static/img/canciones/" + mainSong.img)
 
     let rightSong = songs[(apuntador + 1) % songs.length]
     rightCart.album.innerText = rightSong.album
     rightCart.artist.innerText = rightSong.artista
     rightCart.title.innerText = rightSong.nombre
+    //rightCart.img.setAttribute("src", "http://localhost:80/proyecto-dise-o/static/img/canciones/" + rightSong.img)
 
     let hiddenRightSong = songs[(apuntador + 2) % songs.length]
     hiddenRightCart.album.innerText = hiddenRightSong.album
     hiddenRightCart.artist.innerText = hiddenRightSong.artista
     hiddenRightCart.title.innerText = hiddenRightSong.nombre
+    //hiddenRightCart.img.setAttribute("src", "http://localhost:80/proyecto-dise-o/static/img/canciones/" + hiddenRightSong.img)
 }
 
 function next() {
