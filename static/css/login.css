@@ -1,0 +1,30 @@
+#general{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.input{
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 5px;
+    width: 500px;
+    
+}
+
+#general label{
+    margin-top: 15px;
+}
+
+#inputs-labels{
+    text-align: left;
+    width: 500px;
+
+}
+
+h2{
+    margin-top: 20px;
+}

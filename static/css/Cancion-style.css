@@ -4,17 +4,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
+#main-panel {
+  background: transparent;
 
-main {
-  background: linear-gradient(#a4a5ef, #df9dc0);
-  height: 88%;
   text-align: center;
-  padding: 50px;
+  margin-top: 40px;
 }
 
 #subtitulo {
@@ -23,33 +17,32 @@ main {
   font-weight: bold;
 }
 
-main .img-up {
+#main-panel .img-up {
   overflow: hidden;
   display: inline-block;
 }
 
-main #can_img {
+#main-panel #can_img {
   width: 230px;
   height: 230px;
   border-radius: 16px;
 }
 
-main #subir_imagen {
-  width: 250px;
+#main-panel #subir_imagen {
+  width: 50px;
   height: 50px;
 }
 
-main .info {
+#main-panel .info {
   text-align: center;
-  width: 600px;
+  width: 650px;
   height: 250px;
   background-color: transparent;
   float: right;
-  padding: 15px;
 }
 
-main .cancion {
-  width: 850px;
+#main-panel .cancion {
+  width: 800px;
   height: 10%;
   float: right;
   margin-top: 30px;
@@ -61,9 +54,9 @@ main .cancion {
   align-items: center;
 }
 
-main input {
+#main-panel .inputs-subir {
   float: right;
-  width: 420px;
+  width: 480px;
   padding: 3px;
   background: transparent;
   border: 2px solid white;
@@ -71,16 +64,16 @@ main input {
   outline: none;
 }
 
-main label {
+#main-panel .labels-subir {
   float: left;
   color: white;
 }
 
-main #descripcion {
+#main-panel #descripcion {
   height: 40px;
 }
 
-main #play {
+#main-panel #play {
   width: 50px;
   float: left;
   margin-left: 20px;
@@ -88,16 +81,16 @@ main #play {
   border: none;
 }
 
-main #barrita {
+#main-panel #barrita {
   width: 650px;
   margin-left: 40px;
 }
 
-main #tiempo {
+#main-panel #tiempo {
   margin-left: 10px;
 }
 
-main .botones {
+#main-panel .botones {
   float: left;
   width: 50%;
   margin-left: 200px;
@@ -106,29 +99,30 @@ main .botones {
   text-align: center;
 }
 
-main #btn_subir {
+#main-panel #btn_subir {
   padding: 6px;
   border-radius: 12px;
   background: transparent;
   color: white;
 }
 
-main #btn_subir:hover {
+#main-panel #btn_subir:hover {
   color: black;
 }
 
-main .superior {
+#main-panel .superior {
   display: flex;
   justify-content: space-around;
   align-content: center;
 }
 
-main h2 {
-  display: block;
+#main-panel #subtitulo {
+  display: inline;
 }
 
-div {
+#Recarga {
+  margin-top: 10px;
   border: dashed 1px red;
-  width: 200px;
-  height: 100px;
+  width: 280px;
+  height: 250px;
 }

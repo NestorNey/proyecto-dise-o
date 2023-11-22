@@ -6,9 +6,8 @@
     <title>Subir cancion</title>
 </head>
 <body>
-    <main>
+    <main id="main-panel">
         
-        <h2 id="subtitulo">Info</h2> <br><br>
         
         <form action="subir.php" method="post" enctype="multipart/form-data">
 
@@ -34,16 +33,16 @@
                 
         
                 <article class="info">
-                    <label for="artista">Artista: </label>
-                    <input type="text" name="artista" id="artista"><br><br><br>
-                    <label for="name">Nombre de la cancion: </label>
-                    <input type="text" name="name" id="NombreC"><br><br><br>
-                    <label for="desc">Descripcion: </label>
-                    <input type="text" name="desc" id="descripcion"><br><br><br><br>
-                    <label for="genero">Genero: </label>
-                    <input type="text" name="genero" id="genero"><br><br><br>
-                    <label for="album">Artista: </label>
-                    <input type="text" name="album" id="album">
+                    <label for="artista" class="labels-subir">Artista: </label>
+                    <input type="text" name="artista" id="artista" class="inputs-subir"><br><br><br>
+                    <label for="name" class="labels-subir">Nombre de la cancion: </label>
+                    <input type="text" name="name" id="NombreC" class="inputs-subir"><br><br><br>
+                    <label for="desc" class="labels-subir">Descripcion: </label>
+                    <input type="text" name="desc" id="descripcion" class="inputs-subir"><br><br><br><br>
+                    <label for="genero" class="labels-subir">Genero: </label>
+                    <input type="text" name="genero" id="genero" class="inputs-subir"><br><br><br>
+                    <label for="album" class="labels-subir">Artista: </label>
+                    <input type="text" name="album" id="album" class="inputs-subir">
                 
                 </article>
             </section>

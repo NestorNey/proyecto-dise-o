@@ -1,0 +1,27 @@
+.maibudi {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.user {
+  color: #000000;
+  font-size: 35px;
+}
+
+.pe {
+  color: #666666;
+}
+
+.thisimg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.ola {
+  padding: 5px;
+}
