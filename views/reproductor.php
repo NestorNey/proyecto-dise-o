@@ -11,6 +11,8 @@
 
   $fetch = mysqli_query($conection, $sql);
   $song = mysqli_fetch_array($fetch);
+
+  $songName = str_replace(".mp3", "", $songName);
 ?>
 
 <head>
@@ -20,7 +22,7 @@
 <section id="player-section">
   <article class="music-player-container">
     <div class="title-music-container">
-        <h4 class="song-title"><?php echo $song['NombreC']; ?></h4>
+        <h4 class="song-title"><?php echo $songName; ?></h4>
         <span class="song-author"><?php echo $song['Artista']; ?></span>
     </div>
     <div class="controls-music-container">

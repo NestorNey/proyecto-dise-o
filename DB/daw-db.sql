@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Nov 21, 2023 at 04:28 PM
--- Server version: 8.0.31
--- PHP Version: 8.0.26
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 21-11-2023 a las 19:00:44
+-- Versión del servidor: 8.0.31
+-- Versión de PHP: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `daw-db`
+-- Base de datos: `daw-db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `musica`
+-- Estructura de tabla para la tabla `musica`
 --
 
 DROP TABLE IF EXISTS `musica`;
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `musica` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Dumping data for table `musica`
+-- Volcado de datos para la tabla `musica`
 --
 
 INSERT INTO `musica` (`ID`, `NombreC`, `Artista`, `Genero`, `Descripcion`, `img`, `NombreUser`, `Album`) VALUES
@@ -54,7 +54,7 @@ INSERT INTO `musica` (`ID`, `NombreC`, `Artista`, `Genero`, `Descripcion`, `img`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -66,16 +66,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Contrasena` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `UltimasEscuchadas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci,
   `Favoritos` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci,
+  `Plan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL DEFAULT 'Gratuito',
   PRIMARY KEY (`UserName`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`Nombre`, `UserName`, `Correo`, `Img`, `Contrasena`, `UltimasEscuchadas`, `Favoritos`) VALUES
-('Adriel', 'Cubos', 'Email@gmail.com', 'logo colors cambiados.jpg', '$2y$15$8X7wgzEtbkSzn2569BrTxeHfZyhepCcFtoCfSpiULHf7M1MRbk1eu', NULL, NULL),
-('qq', 'qq', 'qq', 'me.jpg', '$2y$15$xLmPhkyAHL2ynHQno/rLT.e7SO8namF4VKIJ6W0BZd1Fi7Fjk4iE2', NULL, NULL);
+INSERT INTO `users` (`Nombre`, `UserName`, `Correo`, `Img`, `Contrasena`, `UltimasEscuchadas`, `Favoritos`, `Plan`) VALUES
+('Adriel', 'Cubos', 'Email@gmail.com', 'logo colors cambiados.jpg', '$2y$15$8X7wgzEtbkSzn2569BrTxeHfZyhepCcFtoCfSpiULHf7M1MRbk1eu', NULL, NULL, 'Individual'),
+('qq', 'qq', 'qq', 'me.jpg', '$2y$15$xLmPhkyAHL2ynHQno/rLT.e7SO8namF4VKIJ6W0BZd1Fi7Fjk4iE2', NULL, NULL, 'Individual');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

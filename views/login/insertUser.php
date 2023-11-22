@@ -23,6 +23,7 @@
         $_SESSION['name'] = $name;
         $_SESSION['mail'] = $mail;
         $_SESSION['imgName'] = $imgName;
+        $_SESSION['plan'] = 'Gratuito';
         header('location: ./?screen=main');
     }else {
         echo 'error';

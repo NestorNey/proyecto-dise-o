@@ -25,3 +25,7 @@ const redirectCloseSession = () => {
 const redirectProfile = () => {
   document.location = `./?screen=profile`;
 };
+
+const redirectPlanes = () => {
+  document.location = `./?screen=planes`;
+};

@@ -206,3 +206,19 @@ header .sessionBtn:hover {
   background-color: #a4a5ef;
   color: black;
 }
+
+header #btn-plan {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  height: 50px;
+  padding-left: 20px;
+
+  cursor: pointer;
+}
+
+header #btn-plan:hover {
+  background-color: #a4a5ef;
+  color: black;
+}

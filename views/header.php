@@ -35,14 +35,14 @@
                 </section>
             <?php }else { ?>
                 <section id="porfileMenu" onclick="openPorfileMenu()"> 
-                    <img src="<?php echo $rootDir; ?>/static/img/users/<?php echo $_SESSION['imgName'] ?>" alt="">
+                    <img src="<?php echo $rootDir; ?>/static/img/users/<?php echo $_SESSION['imgName']; ?>" alt="">
                     <br>
                     <br>
                     <h3><?php echo $_SESSION['user']; ?></h3>
                     <p id="mail"><?php echo $_SESSION['mail']; ?></p>
                     <br>
-                    <p class="option">Plan actual: Gratuito</p>
-                    <p class="option">Actualizar plan</p>
+                    <p class="option" onclick="redirectPlanes()">Plan actual: <?php echo $_SESSION['plan']; ?></p>
+                    <p class="option" onclick="redirectPlanes()" id="btn-plan">Actualizar plan</p>
                     <p class="option">Politica de privacidad</p>
                     <br>
                     <br>

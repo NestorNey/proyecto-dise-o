@@ -12,11 +12,10 @@
     </section>
     <section>
         <h2>Planes</h2>
-        <div class="plan menuCont"><img src="./static/img/icons/individualy.svg"><p>Plan individual</p></div>
-        <div class="plan menuCont"><img src="./static/img/icons/duo.svg"><p>Plan duo</p></div>
-        <div class="plan menuCont"><img src="./static/img/icons/family.svg"><p>Plan familiar</p></div>
+        <div class="plan menuCont" onclick="document.location = './?screen=planes'"><img src="./static/img/icons/family.svg"><p>Planes</p></div>
     </section>
     <section>
         <div class="lista menuCont" onclick="document.location = './?screen=reproductor'"><p>Reproductor</p></div>
+        <div class="lista menuCont" onclick="document.location = './?screen=formulario/subirCancion'"><p>Subir canción</p></div>
     </section>
 </menu>

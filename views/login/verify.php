@@ -16,6 +16,7 @@
         $_SESSION['name'] = $data['Nombre'];
         $_SESSION['mail'] = $data['Correo'];
         $_SESSION['imgName'] = $data['Img'];
+        $_SESSION['plan'] = $data['Plan'];
         header('location: ./?screen=profile');
     }else {
 ?>
