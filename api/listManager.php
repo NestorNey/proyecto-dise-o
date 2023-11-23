@@ -2,7 +2,7 @@
 require 'conection.php';
 
 function addSongToList($list, $song, $userName){
-    $userList = json_decode(_getList($list, $userName)[0], true);
+    $userList = json_decode(getList($list, $userName)[0], true);
 
     if(empty($userList)) {
         array_unshift($userList, $song);
@@ -25,7 +25,7 @@ function addSongToList($list, $song, $userName){
 }
 
 
-function _getList($list, $userName){
+function getList($list, $userName){
     global $conection;
 
     $sql = "SELECT $list FROM users WHERE UserName='$userName'";
@@ -37,6 +37,7 @@ function _getList($list, $userName){
 
 function _setList($listName, $userList, $userName){
     global $conection;
+
     $userList = json_encode($userList);
 
     $sql = "UPDATE users

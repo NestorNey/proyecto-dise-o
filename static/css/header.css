@@ -107,7 +107,7 @@ header #porfile #porfileMenu {
 
 header #porfile #porfileMenu.opened {
   width: calc(33vw - 50px);
-  height: 400px;
+  height: 455px;
   background-color: #382f50;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 

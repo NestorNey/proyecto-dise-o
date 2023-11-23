@@ -1,5 +1,6 @@
 <?php 
   require_once 'conection.php';
+  require_once './api/listManager.php';
 
   if(isset($_GET['input'])){
     $input = $_GET['input'];
@@ -8,36 +9,38 @@
     $input = '';
   }
 
+  if(isset($_SESSION['user'])){
+    
+    
+    $cancionesPorNombre = getList("UltimasEscuchadas", $_SESSION['user']);
+  }
+
 ?>
 
 <head>
-  <link rel="stylesheet" href="./static/css/result.css" />
+  <link rel="stylesheet" href="./static/css/list.css" />
 </head>
 <article id="main">
-  <h2>Canciones</h2>
-  
-  <?php 
-    if ($input == ''){
-      $sql = "SELECT * FROM musica";
-    }else {
-      $sql = "SELECT * FROM musica WHERE NombreC LIKE LOWER('%$input%')";
-    }
+  <h2>Canciones escuhadas recientemente</h2>
 
-    $fetch = mysqli_query($conection, $sql);
-    while($cancionesPorNombre=mysqli_fetch_array($fetch)){
+  
+  <?php
+    $cancionesPorNombre = json_decode($cancionesPorNombre[0], true);
+
+    foreach ($cancionesPorNombre as $key => $value){
   ?>
   <!-- /?screen=reproductor&songName=$cancionesPorNombre['NombreC'] -->
   <section class="cancion">
     <img src="./static/img/canciones/img1" />
     <section class="songInfo">
       <section class="nameAndAlbum">
-        <p class="nombre"><?php echo $cancionesPorNombre['NombreC']; ?></p>
-        <p class="album"><?php echo $cancionesPorNombre['Album']; ?></p>
+        <p class="nombre"><?php echo $value['NombreC']; ?></p>
+        <p class="album"><?php echo $value['Album']; ?></p>
       </section>
-      <p class="artista"><?php echo $cancionesPorNombre['Artista']; ?></p>
+      <p class="artista"><?php echo $value['Artista']; ?></p>
     </section>
 
-    <button class="botones" id="play" onClick="songClick('<?php echo $rootDir; ?>', '<?php echo $cancionesPorNombre['NombreC']; ?>')">
+    <button class="botones" id="play" onClick="songClick('<?php echo $rootDir; ?>', '<?php echo $value['NombreC']; ?>')">
       <span
         ><img src="./static/img/icons/play.svg" class="icons" id="icon1"
       /></span>
