@@ -123,6 +123,10 @@
 #Recarga {
   margin-top: 10px;
   border: dashed 1px red;
-  width: 280px;
+  width: 250px;
   height: 250px;
+}
+
+.uploaded-img {
+  width: 250px;
 }

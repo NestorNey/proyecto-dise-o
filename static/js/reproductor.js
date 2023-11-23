@@ -54,4 +54,4 @@ plus10.addEventListener("click", () => (audio.currentTime += 10));
 
 back10.addEventListener("click", () => (audio.currentTime -= 10));
 
-playPause.click();
+setTimeout(playPause.click(), 1000);

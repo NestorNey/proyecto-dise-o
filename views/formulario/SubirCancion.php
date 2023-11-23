@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION['user'])){
+        header('location: ./?screen=/login/login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
     <main id="main-panel">
         
         
-        <form action="subir.php" method="post" enctype="multipart/form-data">
+        <form action="./?screen=formulario/subir" method="post" enctype="multipart/form-data">
 
             <section class="superior">
                 <article class="img-up">
@@ -24,7 +30,7 @@
                             var lector = new FileReader();
                             lector.readAsDataURL(imagen);
                             lector.onload = function(){
-                                $("#Recarga").append("<img src='" + lector.result + "'>");
+                                $("#Recarga").append("<img src='" + lector.result + "' class='uploaded-img'>");
                             };
                         });
                     </script>
