@@ -30,7 +30,7 @@
     
     move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
 
-    $imgName = $_FILES['archivo']['tmp_name'];
+    $imgName = $ultimo_lista . basename($_FILES['archivo']['name']);
 
     $carpeta_canciones = './static/songs/';
 
