@@ -28,7 +28,7 @@
   ?>
   <!-- /?screen=reproductor&songName=$cancionesPorNombre['NombreC'] -->
   <section class="cancion">
-    <img src="./static/img/canciones/img1" />
+    <img src="./static/img/canciones/<?php echo $cancionesPorNombre['img'];?>" />
     <section class="songInfo">
       <section class="nameAndAlbum">
         <p class="nombre"><?php echo $cancionesPorNombre['NombreC']; ?></p>
