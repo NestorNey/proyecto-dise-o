@@ -44,7 +44,7 @@
                     <p class="option" onclick="redirectPlanes()">Plan actual: <?php echo $_SESSION['plan']; ?></p>
                     <p class="option" onclick="redirectPlanes()" id="btn-plan">Actualizar plan</p>
                     <p class="option" onclick="document.location = './?screen=formulario/subirCancion'">Subir cancion</p>
-                    <p class="option">Politica de privacidad</p>
+                    <p class="option" onclick="document.location = './?screen=PoliticaPrivacidad'">Politica de privacidad</p>
                     <br>
                     <br>
                     <div>

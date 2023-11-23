@@ -30,7 +30,7 @@
     
     move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
 
-
+    $imgName = $_FILES['archivo']['tmp_name'];
 
     $carpeta_canciones = './static/songs/';
 
@@ -44,13 +44,13 @@
 
     $songName = $ultimo_lista . basename($_FILES['archivo_audio']['name']);
 
-    $instruccion = "INSERT INTO musica (NombreC, Artista, Genero, Descripcion, Album, img) VALUES ('$songName', '$Artista', '$Genero', '$Descripcion', '$Album', '$archivo_subido')";
+    $instruccion = "INSERT INTO musica (NombreC, Artista, Genero, Descripcion, Album, img) VALUES ('$songName', '$Artista', '$Genero', '$Descripcion', '$Album', '$imgName')";
 
     $mandadero = mysqli_query($conection, $instruccion);
 
     if($mandadero){
         // echo('Si');
-        header('location: ./?screen=reproductor&songName='.$songName);
+        header('location: ./?screen=reproductor&songName=' . $songName);
     }
     else{
         echo('No');

@@ -1,0 +1,35 @@
+.yeebody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.maiheader {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba( 0, 0, 0, 0.85);
+    color: #ffffff;
+}
+
+.titulo {
+    color: #ffffff;
+}
+
+.poli-priv {
+    margin-top: 20px;
+}
+
+.pe {
+    margin-bottom: 15px;
+}
+
+.derechosF {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba( 0, 0, 0, 0.85);
+    color: #fff;
+}

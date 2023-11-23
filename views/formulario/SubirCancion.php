@@ -15,7 +15,7 @@
     <main id="main-panel">
         
         
-        <form action="./?screen=formulario/subir" method="post" enctype="multipart/form-data">
+        <form action="./?screen=formulario/subir" method="POST" enctype="multipart/form-data">
 
             <section class="superior">
                 <article class="img-up">
@@ -58,11 +58,11 @@
                 <button id="play"><img src="./img/play-icon.svg"></button>
                 <input type="file" name="archivo_audio" id="archivo_audio">
 
-                <script>
+                <!-- <script>
                    //Cargar reproductor
-                  </script>
+                  </script> -->
                 
-                <p id="tiempo">0:00 - 4:30</p>
+                <!-- <p id="tiempo">0:00 - 4:30</p> -->
             </section>
 
             <section class="botones">
