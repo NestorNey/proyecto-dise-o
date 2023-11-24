@@ -15,15 +15,13 @@
 
         <?php require('./views/header.php'); ?>
 
-        <main>
-        
-            <?php require('./views/menu.php'); ?>
+        <?php require('./views/menu.php'); ?>
 
-            <section id="mainPanel" class=".swiper-pagination">
+
+        <main>
                 <?php
                     require("./views/$screen.php");
                 ?>
-            </section>
         </main>
     </body>
 </html>

@@ -58,7 +58,7 @@ function updateSongDisplay() {
   let hiddenLeftSong = songs[(apuntador - 2 + songs.length) % songs.length];
   hiddenLeftCart.album.innerText = hiddenLeftSong.album;
   hiddenLeftCart.artist.innerText = hiddenLeftSong.artista;
-  hiddenLeftCart.title.innerText = hiddenLeftSong.nombre;
+  hiddenLeftCart.title.innerText = hiddenLeftSong.nombre.replace(".mp3", "");
   hiddenLeftCart.img.setAttribute(
     "src",
     "http://localhost:80/proyecto-dise-o/static/img/canciones/" +
@@ -68,7 +68,7 @@ function updateSongDisplay() {
   let leftSong = songs[(apuntador - 1 + songs.length) % songs.length];
   leftCart.album.innerText = leftSong.album;
   leftCart.artist.innerText = leftSong.artista;
-  leftCart.title.innerText = leftSong.nombre;
+  leftCart.title.innerText = leftSong.nombre.replace(".mp3", "");
   leftCart.img.setAttribute(
     "src",
     "http://localhost:80/proyecto-dise-o/static/img/canciones/" + leftSong.img
@@ -78,7 +78,7 @@ function updateSongDisplay() {
   mainCart.cart.style.filter = "brightness(100%)";
   mainCart.album.innerText = mainSong.album;
   mainCart.artist.innerText = mainSong.artista;
-  mainCart.title.innerText = mainSong.nombre;
+  mainCart.title.innerText = mainSong.nombre.replace(".mp3", "");
   mainCart.img.setAttribute(
     "src",
     "http://localhost:80/proyecto-dise-o/static/img/canciones/" + mainSong.img
@@ -87,7 +87,7 @@ function updateSongDisplay() {
   let rightSong = songs[(apuntador + 1) % songs.length];
   rightCart.album.innerText = rightSong.album;
   rightCart.artist.innerText = rightSong.artista;
-  rightCart.title.innerText = rightSong.nombre;
+  rightCart.title.innerText = rightSong.nombre.replace(".mp3", "");
   rightCart.img.setAttribute(
     "src",
     "http://localhost:80/proyecto-dise-o/static/img/canciones/" + rightSong.img
@@ -96,7 +96,7 @@ function updateSongDisplay() {
   let hiddenRightSong = songs[(apuntador + 2) % songs.length];
   hiddenRightCart.album.innerText = hiddenRightSong.album;
   hiddenRightCart.artist.innerText = hiddenRightSong.artista;
-  hiddenRightCart.title.innerText = hiddenRightSong.nombre;
+  hiddenRightCart.title.innerText = hiddenRightSong.nombre.replace(".mp3", "");
   hiddenRightCart.img.setAttribute(
     "src",
     "http://localhost:80/proyecto-dise-o/static/img/canciones/" +

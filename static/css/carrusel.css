@@ -37,29 +37,29 @@
 
 .carousel-sec .cSong{
   flex-shrink: 0;
-  width: 500px;
-  height: 250px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 18vw;
+  height: 330px;
+  margin-left: 4vw;
+  margin-right: 4vw;
   background-color: #382f50;
   border-radius: 10px;
   overflow: hidden;
-  display: flex;
   filter: brightness(50%) blur(1px);
-  transition: transform 0s, filter 0s;
+  background-color: #382f5000;
+  transition: transform 0s, filter 0s, background-color .5s;
 }
 
 .carousel-sec .cSong .songImage{
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .carousel-sec .cSong h2{
   padding-left: 10px;
-  padding-top: 15px;
-  margin-bottom: 25px;
-  color: white;
-  height: 15%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
 }
 
 .carousel-sec .cSong .artistAndAlbum{
@@ -67,25 +67,25 @@
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  color: rgb(201, 201, 201);
-  height: 10%;
-}
-
-.carousel-sec .cSong .iconPlay{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 55%;
-  width: 100%;
-}
-
-.carousel-sec .leftSide{
-  width: 100%;
+  color: rgb(46, 46, 46);
+  font-size: 15px;
 }
 
 .carousel-sec .cSong .icon{
-  width: 25%;
-  transition: transform .5s;
+  position: absolute;
+  margin-top: -20vw;
+  margin-left: 3.5vw;
+  width: 10vw;
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+
+.carousel-sec .cSong:hover{
+  background-color: #382f5052;
+}
+
+.carousel-sec .cSong:hover .icon{
+  opacity: 1;
 }
 
 .carousel-sec .cSong .icon:hover{
@@ -93,12 +93,12 @@
 }
 
 .carousel-sec .cSong.right{
-  transform: translateX(540px);
+  transform: translateX(26vw);
   transition: transform 1s, filter 1s;
 }
 
 .carousel-sec .cSong.left{
-  transform: translateX(-540px);
+  transform: translateX(-26vw);
   transition: transform 1s, filter 1s;
 }
 
