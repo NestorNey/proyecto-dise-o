@@ -9,7 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./static/css/main.css">
-        <title>MyMusic</title>
+        <title>Music Hub</title>
     </head>
     <body>
 

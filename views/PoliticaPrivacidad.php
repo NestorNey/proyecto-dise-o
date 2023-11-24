@@ -7,9 +7,9 @@
 
 <body class="yeebody">
 
-    <header class="maiheader">
+    <section class="maiheader">
         <h1 class="titulo">Política de Privacidad</h1>
-    </header>
+    </section>
 
     <section class="poli-priv">
         <h2>1. Información recopilada</h2>
@@ -35,9 +35,9 @@
 
     </section>
 
-    <footer class="derechosF">
+    <section class="derechosF">
         <p>&copy; 2023 MusicHub. Todos los derechos reservados.</p>
-    </footer>
+    </section>
 
 </body>
 

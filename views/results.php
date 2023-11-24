@@ -37,7 +37,7 @@
       <p class="artista"><?php echo $cancionesPorNombre['Artista']; ?></p>
     </section>
 
-    <button class="botones" id="play" onClick="songClick('<?php echo $rootDir; ?>', '<?php echo $cancionesPorNombre['NombreC']; ?>')">
+    <button class="botones" id="play" onclick="songClick('<?php echo $rootDir; ?>', '<?php echo $cancionesPorNombre['NombreC']; ?>')">
       <span
         ><img src="./static/img/icons/play.svg" class="icons" id="icon1"
       /></span>

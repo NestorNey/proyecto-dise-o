@@ -32,7 +32,7 @@
             <li class="main-li">2 Cuentas especiales</li>
         </ul>
         <p class="precio">$29.99 al mes</p>
-        <button class="main-button">Comprar</button>
+        <button class="main-button" onclick="document.location = './?screen=cambiarPlan&planG=Duo'">Comprar</button>
     </section>
 
     <section>
@@ -48,7 +48,7 @@
             <li class="main-li">Hasta 4 Cuentas especiales</li>
         </ul>
         <p class="precio">$49.99 al mes</p>
-        <button class="main-button">Comprar</button>
+        <button class="main-button" onclick="document.location = './?screen=cambiarPlan&planG=Familiar'">Comprar</button>
     </section>
 
     <section>
@@ -64,6 +64,6 @@
             <li class="main-li">Hasta 3 Cuentas especiales</li>
         </ul>
         <p class="precio">$179.99 al año</p>
-        <button class="main-button">Comprar</button>
+        <button class="main-button" onclick="document.location = './?screen=cambiarPlan&planG=Anual'">Comprar</button>
     </section>
 </article>

@@ -15,6 +15,8 @@ const displayDuration = () => {
   songLength.innerHTML = calculateTime(audio.duration);
 };
 
+console.log(audio.readyState);
+
 if (audio.readyState > 0) {
   displayDuration();
   currentTime.innerHTML = calculateTime(audio.currentTime);
@@ -37,21 +39,30 @@ function setProgress() {
 //Audio Controls
 const playPause = document.getElementById("PlayPause"),
   plus10 = document.getElementById("Plus10"),
-  back10 = document.getElementById("Back10");
+  back10 = document.getElementById("Back10"),
+  changeSongBack = document.getElementById("changeSongBack"),
+  changeSongForward = document.getElementById("changeSongForward");
 
 playPause.addEventListener("click", () => {
   if (audio.paused) {
-    // FALTA CAMBIAR LOS ICONOS PARA QUE SEAN BLANCOS Y FALTA EL DE PAUSA
-    playPause.src = "./static/img/icons/backward-step-svgrepo-com.svg";
+    playPause.src = "./static/img/icons/pause1.svg";
     audio.play();
   } else {
-    playPause.src = "./static/img/icons/play.svg";
+    playPause.src = "./static/img/icons/play1.svg";
     audio.pause();
   }
 });
 
 plus10.addEventListener("click", () => (audio.currentTime += 10));
-
 back10.addEventListener("click", () => (audio.currentTime -= 10));
+
+changeSongBack.addEventListener(
+  "click",
+  () => (window.location = "./?screen=reproductor&songName=null")
+);
+changeSongForward.addEventListener(
+  "click",
+  () => (window.location = "./?screen=nextSong")
+);
 
 setTimeout(playPause.click(), 1000);

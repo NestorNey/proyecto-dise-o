@@ -8,6 +8,10 @@
     $songName = 'No se encontro la canción solicitada';
   }
 
+  if($songName == 'null'){
+    header('location: ./?screen=results&input=');
+  }else{
+    
   $sql = "SELECT * FROM musica WHERE NombreC='$songName'";
 
   $fetch = mysqli_query($conection, $sql);
@@ -52,11 +56,15 @@
     </div>
     <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['NombreC']; ?>"></audio>
     <div class="main-song-controls">
+        <img src="./static/img/icons/backward-step-svgrepo-com.svg" alt="prev" class="icon" id="changeSongBack">
         <img src="./static/img/icons/backward-step-svgrepo-com.svg" alt="prev" class="icon" id="Back10">
-        <img src="./static/img/icons/play.svg" alt="play" class="icon" id="PlayPause">
+        <img src="./static/img/icons/play1.svg" alt="play" class="icon" id="PlayPause">
         <img src="./static/img/icons/forward-step-svgrepo-com.svg" alt="next" class="icon" id="Plus10">
+        <img src="./static/img/icons/forward-step-svgrepo-com.svg" alt="next" class="icon" id="changeSongForward">
     </div>
   </article>
 </section>
 
 <script src="<?php echo $rootDir; ?>/static/js/reproductor.js"></script>
+
+<?php } ?>
