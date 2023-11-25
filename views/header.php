@@ -30,8 +30,8 @@
         <section id="porfile">
             <?php if(!isset($_SESSION['user'])){ ?>
                 <section>
-                    <button onclick="redirectLogin()" class="sessionBtn">Log In</button>
-                    <button onclick="redirectSignin()" class="sessionBtn">Sign In</button>
+                    <button onclick="redirectLogin()" class="sessionBtn">Iniciar sesión</button>
+                    <button onclick="redirectSignin()" class="sessionBtn">Registrarse</button>
                 </section>
             <?php }else { ?>
                 <section id="porfileMenu" onclick="openPorfileMenu()"> 

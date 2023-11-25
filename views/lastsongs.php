@@ -2,6 +2,10 @@
   require_once 'conection.php';
   require_once './api/listManager.php';
 
+  if(!isset($_SESSION['user'])){
+    header('location: ./');
+  }
+
   if(isset($_GET['input'])){
     $input = $_GET['input'];
     $input = trim($input);
@@ -21,7 +25,7 @@
   <link rel="stylesheet" href="./static/css/list.css" />
 </head>
 <article id="main">
-  <h2>Canciones escuhadas recientemente</h2>
+  <h2>Canciones escuchadas recientemente</h2>
 
   
   <?php
