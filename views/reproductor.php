@@ -18,6 +18,7 @@
   $song = mysqli_fetch_array($fetch);
 
   $songName = str_replace(".mp3", "", $songName);
+  $songName = str_replace($song['ID'], "", $songName);
   
   if(isset($_SESSION['user'])){
     $songToSave = array(
@@ -56,11 +57,23 @@
     </div>
     <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['NombreC']; ?>"></audio>
     <div class="main-song-controls">
-        <img src="./static/img/icons/backward-step-svgrepo-com.svg" alt="prev" class="icon" id="changeSongBack">
+        <img 
+          src="./static/img/icons/backward-step-svgrepo-com.svg" 
+          alt="prev" 
+          class="icon" 
+          id="changeSongBack"
+          onclick="changeSongBack()"
+        >
         <img src="./static/img/icons/backward-step-svgrepo-com.svg" alt="prev" class="icon" id="Back10">
         <img src="./static/img/icons/play1.svg" alt="play" class="icon" id="PlayPause">
         <img src="./static/img/icons/forward-step-svgrepo-com.svg" alt="next" class="icon" id="Plus10">
-        <img src="./static/img/icons/forward-step-svgrepo-com.svg" alt="next" class="icon" id="changeSongForward">
+        <img 
+          src="./static/img/icons/forward-step-svgrepo-com.svg" 
+          alt="next" 
+          class="icon" 
+          id="changeSongForward" 
+          onclick="changeSongForward('<?php echo $song['NombreC']; ?>')"
+        >
     </div>
   </article>
 </section>

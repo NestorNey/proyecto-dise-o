@@ -23,7 +23,7 @@
         <img src="./static/img/icons/duo.svg" class="main-icon">
     </section>
     <section class="main-section">
-        <h3 class="main-h3">Plan Para Pareja</h3>
+        <h3 class="main-h3">Plan Duo</h3>
         <ul>
             <li class="main-li">Escucha sin anuncios</li>
             <li class="main-li">Reproducción sin conexión</li>

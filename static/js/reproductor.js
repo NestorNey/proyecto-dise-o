@@ -39,9 +39,9 @@ function setProgress() {
 //Audio Controls
 const playPause = document.getElementById("PlayPause"),
   plus10 = document.getElementById("Plus10"),
-  back10 = document.getElementById("Back10"),
-  changeSongBack = document.getElementById("changeSongBack"),
-  changeSongForward = document.getElementById("changeSongForward");
+  back10 = document.getElementById("Back10");
+// changeSongBack = document.getElementById("changeSongBack"),
+// changeSongForward = document.getElementById("changeSongForward");
 
 playPause.addEventListener("click", () => {
   if (audio.paused) {
@@ -56,13 +56,11 @@ playPause.addEventListener("click", () => {
 plus10.addEventListener("click", () => (audio.currentTime += 10));
 back10.addEventListener("click", () => (audio.currentTime -= 10));
 
-changeSongBack.addEventListener(
-  "click",
-  () => (window.location = "./?screen=reproductor&songName=null")
-);
-changeSongForward.addEventListener(
-  "click",
-  () => (window.location = "./?screen=nextSong")
-);
+function changeSongForward(songName) {
+  window.location = `./?screen=nextSong&songName=${songName}`;
+}
+function changeSongBack() {
+  window.location = `./?screen=previousSong`;
+}
 
 setTimeout(playPause.click(), 1000);

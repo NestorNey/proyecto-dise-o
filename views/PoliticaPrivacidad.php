@@ -14,19 +14,19 @@
     <section class="poli-priv">
         <h2>1. Información recopilada</h2>
         <p class="pe">En nuestra empresa de música, recopilamos información personal como nombre, dirección y dirección de correo
-            electrónico para tener una mejor administracion de los usuarios</p>
+            electrónico para tener una mejor administracion de los usuarios</p> <br>
 
 
         <h2>2. Uso de la información</h2>
         <p class="pe">La información recopilada se utiliza para mejorar nuestros servicios y personalizar la experiencia del
-            usuario para asi siempre tener dar una buena experiencia a todos los usuarios</p>
+            usuario para asi siempre tener dar una buena experiencia a todos los usuarios</p><br>
 
         <h2>3. Contacto</h2>
         <p class="pe">Nombre comercial: MusicHub <br>
            Correo: MusicHub@gmail.com <br>
            Numero Telefonico: +52 3310101010 <br>
            Domicilio: Poli 
-        </p>
+        </p><br>
 
         <h2>4. Informacion legal</h2>
         <p class="pe">Los requisitos de esta Política complementan, y no reemplazan, cualquier otro requisito existente bajo la ley de protección de datos aplicable,

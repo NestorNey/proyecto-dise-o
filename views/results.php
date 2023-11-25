@@ -25,13 +25,14 @@
 
     $fetch = mysqli_query($conection, $sql);
     while($cancionesPorNombre=mysqli_fetch_array($fetch)){
+      $songName = str_replace(".mp3", "", $cancionesPorNombre['NombreC']);
+      $songName = str_replace($cancionesPorNombre['ID'], "", $songName);
   ?>
-  <!-- /?screen=reproductor&songName=$cancionesPorNombre['NombreC'] -->
   <section class="cancion">
     <img src="./static/img/canciones/<?php echo $cancionesPorNombre['img'];?>" />
     <section class="songInfo">
       <section class="nameAndAlbum">
-        <p class="nombre"><?php echo $cancionesPorNombre['NombreC']; ?></p>
+        <p class="nombre"><?php echo $songName; ?></p>
         <p class="album"><?php echo $cancionesPorNombre['Album']; ?></p>
       </section>
       <p class="artista"><?php echo $cancionesPorNombre['Artista']; ?></p>
