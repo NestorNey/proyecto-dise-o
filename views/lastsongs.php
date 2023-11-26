@@ -31,6 +31,8 @@
   <?php
     $cancionesPorNombre = json_decode($cancionesPorNombre[0], true);
 
+    echo $cancionesPorNombre[1]["NombreC"];
+
     foreach ($cancionesPorNombre as $key => $value){
   ?>
   <!-- /?screen=reproductor&songName=$cancionesPorNombre['NombreC'] -->

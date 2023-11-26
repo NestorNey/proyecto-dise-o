@@ -6,23 +6,15 @@
     font-family: 'Mulish', sans-serif;
 }
 
-/*    Main    */
-main{
-    display: flex;
-
-    width: 100vw;
-    height: 84vh;
-    
+html{
     background: linear-gradient(322deg, rgba(164,165,239,1) 0%, rgba(223,157,192,1) 100%);
-
-    transition: width .5s; 
 }
 
-#mainPanel{
-    width: 100%;
+/*    Main    */
+main{
+    width: calc(100vw - 44px);
     height: 100%;
 
-    overflow-y: scroll;
-    overflow-x: hidden;
+    margin-left: 44px;
 }
 

@@ -13,13 +13,11 @@
     <img id="left" src="./static/img/icons/arrow.svg">
     <section id="interCarousel">
         <article class="cSong" id="hiddenLeftCart">
+            <img src="./static/img/icons/play-white.svg" class="icon">
             <img class="songImage" id="hlcImg" src="./static/img/canciones/album.png">
-            <div class="leftSide">
-                <h2 id="hlcTitle"></h2>
-                <p class="artistAndAlbum">Artista: <span id="hlcArtist"></span></p>
-                <p class="artistAndAlbum">Album: <span id="hlcAlbum"></span></p>
-                <div class="iconPlay"><img src="./static/img/icons/play-white.svg" class="icon"></div>
-            </div>
+            <h2 id="hlcTitle"></h2>
+            <p class="artistAndAlbum">Artista: <span id="hlcArtist"></span></p>
+            <p class="artistAndAlbum">Album: <span id="hlcAlbum"></span></p>
         </article>
         <article class="cSong" id="leftCart">
             <img class="songImage" id="lcImg" src="./static/img/canciones/Porfiado_Cuarteto_Nos.jpg">
