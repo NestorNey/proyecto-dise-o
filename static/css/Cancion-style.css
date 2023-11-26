@@ -35,11 +35,13 @@
 
 #main-panel .info {
   text-align: center;
-  width: 650px;
-  height: 250px;
-  background-color: transparent;
+  width: 620px;
+  height: 320px;
+  background: linear-gradient(30deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
   float: right;
+  border-radius: 15px;
 }
+
 
 #main-panel .cancion {
   width: 800px;
@@ -55,23 +57,18 @@
 }
 
 #main-panel .inputs-subir {
-  float: right;
   width: 480px;
-  padding: 3px;
+  padding: 8px;
   background: transparent;
-  border: 2px solid white;
+  border: none;
+  border-bottom: 1px solid white;
   border-radius: 8px;
   outline: none;
-}
-
-#main-panel .labels-subir {
-  float: left;
+  margin-top: 15px;
   color: white;
+  font-size: 13px;
 }
 
-#main-panel #descripcion {
-  height: 40px;
-}
 
 #main-panel #play {
   width: 50px;
@@ -99,16 +96,7 @@
   text-align: center;
 }
 
-#main-panel #btn_subir {
-  padding: 6px;
-  border-radius: 12px;
-  background: transparent;
-  color: white;
-}
 
-#main-panel #btn_subir:hover {
-  color: black;
-}
 
 #main-panel .superior {
   display: flex;
@@ -129,4 +117,21 @@
 
 .uploaded-img {
   width: 250px;
+}
+
+#main-panel #btn_subir {
+  padding: 6px;
+  border-radius: 12px;
+  font-size: 20px;
+  background: linear-gradient(30deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+  color: white;
+  transition: 1s;
+  transform-origin: center;
+}
+
+#main-panel #btn_subir:hover {
+
+  transform: rotateZ(360deg);
+  padding: 15px;
+  position: relative;
 }

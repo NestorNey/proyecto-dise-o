@@ -12,6 +12,6 @@
         $fetch = mysqli_query($conection, $sql);
 
         $_SESSION['plan'] = $plan;
-        header('location: ./?screen=profile');
+        header('location: ./?screen=gracias');
     }
 ?>

@@ -17,7 +17,7 @@
 <header>
     <header>
         <section id="logoSec">
-            <h1 id="logo">MyMusic</h1>
+            <h1 id="logo">Music Hub</h1>
         </section>
         <section id="search">
             <?php if($showSearchBar){ ?>
@@ -30,8 +30,8 @@
         <section id="porfile">
             <?php if(!isset($_SESSION['user'])){ ?>
                 <section>
-                    <button onclick="redirectLogin()" class="sessionBtn">Log In</button>
-                    <button onclick="redirectSignin()" class="sessionBtn">Sign In</button>
+                    <button onclick="redirectLogin()" class="sessionBtn">Iniciar sesión</button>
+                    <button onclick="redirectSignin()" class="sessionBtn">Registrarse</button>
                 </section>
             <?php }else { ?>
                 <section id="porfileMenu" onclick="openPorfileMenu()"> 

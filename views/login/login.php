@@ -24,7 +24,7 @@
       </article>
       
 
-      <a href="olvideMiContra.html" class="olvide">Olvide mi contraseña</a><br><br>
+      <!-- <a href="olvideMiContra.html" class="olvide">Olvide mi contraseña</a><br><br> -->
 
       <div id="redbtns">
         <input type="submit" class="red-btn" value="Iniciar sesión" />

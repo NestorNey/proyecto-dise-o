@@ -15,7 +15,7 @@
     <main id="main-panel">
         
         
-        <form action="./?screen=formulario/subir" method="POST" enctype="multipart/form-data">
+        <form action="./?screen=formulario/subir" method="post" enctype="multipart/form-data">
 
             <section class="superior">
                 <article class="img-up">
@@ -39,16 +39,38 @@
                 
         
                 <article class="info">
-                    <label for="artista" class="labels-subir">Artista: </label>
-                    <input type="text" name="artista" id="artista" class="inputs-subir"><br><br><br>
-                    <label for="name" class="labels-subir">Nombre de la cancion: </label>
-                    <input type="text" name="name" id="NombreC" class="inputs-subir"><br><br><br>
-                    <label for="desc" class="labels-subir">Descripcion: </label>
-                    <input type="text" name="desc" id="descripcion" class="inputs-subir"><br><br><br><br>
-                    <label for="genero" class="labels-subir">Genero: </label>
-                    <input type="text" name="genero" id="genero" class="inputs-subir"><br><br><br>
-                    <label for="album" class="labels-subir">Artista: </label>
-                    <input type="text" name="album" id="album" class="inputs-subir">
+                    
+                    <input 
+                    type="text" 
+                    name="artista" 
+                    id="artista" 
+                    class="inputs-subir"
+                    placeholder="Artista"
+                    size="3"><br><br>
+
+                    <input type="text" 
+                    name="name" 
+                    id="NombreC" 
+                    class="inputs-subir"
+                    placeholder="Nombre de la cancion"><br><br>
+
+                    <input type="text" 
+                    name="desc" 
+                    id="descripcion" 
+                    class="inputs-subir"
+                    placeholder="Descripcion"><br><br>
+
+                    <input type="text" 
+                    name="genero" 
+                    id="genero" 
+                    class="inputs-subir"
+                    placeholder="Genero"><br><br>
+
+                    <input type="text" 
+                    name="album" 
+                    id="album" 
+                    class="inputs-subir"
+                    placeholder="Album">
                 
                 </article>
             </section>
@@ -58,11 +80,11 @@
                 <button id="play"><img src="./img/play-icon.svg"></button>
                 <input type="file" name="archivo_audio" id="archivo_audio">
 
-                <!-- <script>
+                <script>
                    //Cargar reproductor
-                  </script> -->
+                  </script>
                 
-                <!-- <p id="tiempo">0:00 - 4:30</p> -->
+                <p id="tiempo">0:00 - 4:30</p>
             </section>
 
             <section class="botones">
