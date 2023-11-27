@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./static/css/login.css">
+    <link rel="stylesheet" href="./static/css/message.css">
     <title>Formulario</title>
   </head>
-  <body>
       <section id="general">
         
         <form
@@ -54,6 +52,11 @@
             <input type="reset" class="red-btn" />
           </div>
         </form>
+        <div id="message">
+          <img src="./static/img/icons/error.png">
+          <p id="messageP">Error: Usuario no econtrado</p>
+        </div>
       </section>
-  </body>
-</html>
+      
+
+  <script type="text/javascript" src="./static/js/message.js"></script>

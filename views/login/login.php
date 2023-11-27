@@ -1,5 +1,6 @@
   <head>
     <link rel="stylesheet" href="./static/css/login.css">
+    <link rel="stylesheet" href="./static/css/message.css">
   </head>
   <section id="general">
     
