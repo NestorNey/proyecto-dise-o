@@ -2,7 +2,6 @@
     <link rel="stylesheet" href="./static/css/planes.css">
 </head>
 
-<article id="main">
     <section>
         <img src="./static/img/icons/individualy.svg" class="main-icon">
     </section>
@@ -66,4 +65,3 @@
         <p class="precio">$179.99 al año</p>
         <button class="main-button" onclick="document.location = './?screen=cambiarPlan&planG=Anual'">Comprar</button>
     </section>
-</article>

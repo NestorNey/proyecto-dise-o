@@ -57,7 +57,7 @@ plus10.addEventListener("click", () => (audio.currentTime += 10));
 back10.addEventListener("click", () => (audio.currentTime -= 10));
 
 function changeSongForward(songName) {
-  window.location = `./?screen=nextSong&songName=${songName}`;
+  window.location = `./?screen=nextSong&songId=${songName}`;
 }
 function changeSongBack() {
   window.location = `./?screen=previousSong`;

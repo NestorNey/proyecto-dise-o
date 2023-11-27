@@ -12,21 +12,15 @@
     <title>Subir cancion</title>
 </head>
 <body>
-    <main id="main-panel">
-        
-        
         <form action="./?screen=formulario/subir" method="post" enctype="multipart/form-data">
-
             <section class="superior">
                 <article class="img-up">
                     <input type="file" name="archivo" id="archivo">
                     <div id="Recarga"></div>
                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                     <script>
-                        
                         $("#archivo").on("change", function(){
                             var imagen = $(this)[0].files[0]
-
                             var lector = new FileReader();
                             lector.readAsDataURL(imagen);
                             lector.onload = function(){
@@ -34,12 +28,9 @@
                             };
                         });
                     </script>
-                                      
                 </article>
-                
-        
+
                 <article class="info">
-                    
                     <input 
                     type="text" 
                     name="artista" 
@@ -70,29 +61,17 @@
                     name="album" 
                     id="album" 
                     class="inputs-subir"
-                    placeholder="Album">
-                
-                </article>
-            </section>
-        
-        
-            <section class="cancion">
-                <button id="play"><img src="./img/play-icon.svg"></button>
-                <input type="file" name="archivo_audio" id="archivo_audio">
+                    placeholder="Album"><br>
 
-                <script>
-                   //Cargar reproductor
-                  </script>
-                
-                <p id="tiempo">0:00 - 4:30</p>
+                    <label for="archivo_audio">Archivo mp3</label><br>
+                    <input type="file" name="archivo_audio" id="archivo_audio" class="inputs-subir" placeholder="Escoger canción">
+                    <p id="tiempoCont">Duracion: <span id="tiempo">0:00 - 4:30</span></p>
+                </article>
             </section>
 
             <section class="botones">
                 <input id="btn_subir" type="submit" value="Subir">
-                
             </section>
         </form>
-        
-    </main>
 </body>
 </html>

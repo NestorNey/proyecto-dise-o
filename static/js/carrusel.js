@@ -4,46 +4,20 @@ let isTimerFinished = true;
 
 const left = document.getElementById("left");
 const right = document.getElementById("right");
+const carts = []
 
-const hiddenLeftCart = {
-  cart: document.getElementById("hiddenLeftCart"),
-  title: document.getElementById("hlcTitle"),
-  artist: document.getElementById("hlcArtist"),
-  album: document.getElementById("hlcAlbum"),
-  img: document.getElementById("hlcImg"),
-};
+for (let i = 1; i <= 7; i++){
+  let cartId = `cart_${i}`
 
-const leftCart = {
-  cart: document.getElementById("leftCart"),
-  title: document.getElementById("lcTitle"),
-  artist: document.getElementById("lcArtist"),
-  album: document.getElementById("lcAlbum"),
-  img: document.getElementById("lcImg"),
-};
-
-const mainCart = {
-  cart: document.getElementById("mainCart"),
-  title: document.getElementById("mcTitle"),
-  artist: document.getElementById("mcArtist"),
-  album: document.getElementById("mcAlbum"),
-  img: document.getElementById("mcImg"),
-};
-
-const rightCart = {
-  cart: document.getElementById("rightCart"),
-  title: document.getElementById("rcTitle"),
-  artist: document.getElementById("rcArtist"),
-  album: document.getElementById("rcAlbum"),
-  img: document.getElementById("rcImg"),
-};
-
-const hiddenRightCart = {
-  cart: document.getElementById("hiddenRightCart"),
-  title: document.getElementById("hrcTitle"),
-  artist: document.getElementById("hrcArtist"),
-  album: document.getElementById("hrcAlbum"),
-  img: document.getElementById("hrcImg"),
-};
+  carts[i] = {
+    cart: document.getElementById(cartId),
+    title: document.getElementById(`${cartId}_title`),
+    artist: document.getElementById(`${cartId}_artist`),
+    album: document.getElementById(`${cartId}_album`),
+    img: document.getElementById(`${cartId}_img`),
+    playicon: document.getElementById(`${cartId}_playicon`),
+  }
+}
 
 async function fetchData() {
   try {
@@ -55,74 +29,46 @@ async function fetchData() {
 }
 
 function updateSongDisplay() {
-  let hiddenLeftSong = songs[(apuntador - 2 + songs.length) % songs.length];
-  hiddenLeftCart.album.innerText = hiddenLeftSong.album;
-  hiddenLeftCart.artist.innerText = hiddenLeftSong.artista;
-  hiddenLeftCart.title.innerText = hiddenLeftSong.nombre.replace(".mp3", "");
-  hiddenLeftCart.img.setAttribute(
-    "src",
-    "http://localhost:80/proyecto-dise-o/static/img/canciones/" +
-      hiddenLeftSong.img
-  );
-
-  let leftSong = songs[(apuntador - 1 + songs.length) % songs.length];
-  leftCart.album.innerText = leftSong.album;
-  leftCart.artist.innerText = leftSong.artista;
-  leftCart.title.innerText = leftSong.nombre.replace(".mp3", "");
-  leftCart.img.setAttribute(
-    "src",
-    "http://localhost:80/proyecto-dise-o/static/img/canciones/" + leftSong.img
-  );
-
-  let mainSong = songs[apuntador];
-  mainCart.cart.style.filter = "brightness(100%)";
-  mainCart.album.innerText = mainSong.album;
-  mainCart.artist.innerText = mainSong.artista;
-  mainCart.title.innerText = mainSong.nombre.replace(".mp3", "");
-  mainCart.img.setAttribute(
-    "src",
-    "http://localhost:80/proyecto-dise-o/static/img/canciones/" + mainSong.img
-  );
-
-  let rightSong = songs[(apuntador + 1) % songs.length];
-  rightCart.album.innerText = rightSong.album;
-  rightCart.artist.innerText = rightSong.artista;
-  rightCart.title.innerText = rightSong.nombre.replace(".mp3", "");
-  rightCart.img.setAttribute(
-    "src",
-    "http://localhost:80/proyecto-dise-o/static/img/canciones/" + rightSong.img
-  );
-
-  let hiddenRightSong = songs[(apuntador + 2) % songs.length];
-  hiddenRightCart.album.innerText = hiddenRightSong.album;
-  hiddenRightCart.artist.innerText = hiddenRightSong.artista;
-  hiddenRightCart.title.innerText = hiddenRightSong.nombre.replace(".mp3", "");
-  hiddenRightCart.img.setAttribute(
-    "src",
-    "http://localhost:80/proyecto-dise-o/static/img/canciones/" +
-      hiddenRightSong.img
-  );
+  for (let i = -3; i <= 3; i++) {
+    let song
+    if(i < 0){
+      song = songs[(apuntador + i + songs.length) % songs.length]
+    }else if(i > 0){
+      song = songs[(apuntador + i) % songs.length]
+    }else{
+      song = songs[apuntador]
+      carts[i + 4].cart.style.filter = "brightness(100%)"
+    }
+    
+    carts[i + 4].album.innerText = song.album
+    carts[i + 4].artist.innerText = song.artista
+    carts[i + 4].title.innerText = song.nombre
+    carts[i + 4].img.setAttribute(
+      "src",
+      `http://localhost:80/proyecto-dise-o/static/songs/${song.id}/${song.img}`
+    )
+    carts[i + 4].playicon.setAttribute(
+      "onclick", 
+      `songClick('./', ${song.id})`
+    )
+  }
 }
 
 function next() {
-  hiddenLeftCart.cart.classList.add("right");
-  leftCart.cart.classList.add("right");
-  leftCart.cart.style.filter = "brightness(100%)";
-  mainCart.cart.classList.add("right");
-  mainCart.cart.style.filter = "brightness(50%) blur(1px)";
-  rightCart.cart.classList.add("right");
-  hiddenRightCart.cart.classList.add("right");
-
   if (isTimerFinished) {
+    for (let i = 1; i <= 7; i++) {
+      carts[i].cart.classList.add("right")
+      if(i === 3) carts[i].cart.style.filter = "brightness(100%)";
+      if(i === 4) carts[i].cart.style.filter = "brightness(50%) blur(1px)";
+    }
+
     isTimerFinished = false;
     setTimeout(() => {
-      hiddenLeftCart.cart.classList.remove("right");
-      leftCart.cart.classList.remove("right");
-      leftCart.cart.style.filter = "brightness(50%) blur(1px)";
-      mainCart.cart.classList.remove("right");
-      mainCart.cart.style.filter = "brightness(100%)";
-      rightCart.cart.classList.remove("right");
-      hiddenRightCart.cart.classList.remove("right");
+      for (let i = 1; i <= 7; i++) {
+        carts[i].cart.classList.remove("right")
+        if(i === 3) carts[i].cart.style.filter = "brightness(50%) blur(1px)";
+        if(i === 4)carts[i].cart.style.filter = "brightness(100%)";
+      }
       apuntador = (apuntador - 1 + songs.length) % songs.length;
       updateSongDisplay();
       isTimerFinished = true;
@@ -131,24 +77,20 @@ function next() {
 }
 
 function prev() {
-  hiddenLeftCart.cart.classList.add("left");
-  leftCart.cart.classList.add("left");
-  mainCart.cart.classList.add("left");
-  mainCart.cart.style.filter = "brightness(50%) blur(1px)";
-  rightCart.cart.classList.add("left");
-  rightCart.cart.style.filter = "brightness(100%)";
-  hiddenRightCart.cart.classList.add("left");
-
   if (isTimerFinished) {
+    for (let i = 1; i <= 7; i++) {
+      carts[i].cart.classList.add("left")
+      if(i === 4) carts[i].cart.style.filter = "brightness(50%) blur(1px)";
+      if(i === 5) carts[i].cart.style.filter = "brightness(100%)";
+    }
+
     isTimerFinished = false;
     setTimeout(() => {
-      hiddenLeftCart.cart.classList.remove("left");
-      leftCart.cart.classList.remove("left");
-      mainCart.cart.classList.remove("left");
-      mainCart.cart.style.filter = "brightness(100%)";
-      rightCart.cart.classList.remove("left");
-      rightCart.cart.style.filter = "brightness(50%) blur(1px)";
-      hiddenRightCart.cart.classList.remove("left");
+      for (let i = 1; i <= 7; i++) {
+        carts[i].cart.classList.remove("left")
+        if(i === 4) carts[i].cart.style.filter = "brightness(100%)";
+        if(i === 5) carts[i].cart.style.filter = "brightness(50%) blur(1px)";
+      }
       apuntador = (apuntador + 1) % songs.length;
       updateSongDisplay();
       isTimerFinished = true;

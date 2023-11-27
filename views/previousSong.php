@@ -4,5 +4,5 @@
     $lastSongs = getList("UltimasEscuchadas", $_SESSION['user']);
     $lastSongs = json_decode($lastSongs[0], true);
 
-    header('location: ./?screen=reproductor&songName='.$lastSongs[1]['NombreC']);
+    header('location: ./?screen=reproductor&songId='.$lastSongs[1]['ID']);
 ?>

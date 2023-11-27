@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/css/signin.css">
+    <link rel="stylesheet" href="./static/css/login.css">
     <title>Formulario</title>
   </head>
   <body>
@@ -19,10 +19,8 @@
           
 
           <article id="inputs-labels">
-            <label for="user">Usuario</label> <br>
             <input type="text" name="user" placeholder="Usuario" class="input" /><br> <br>
 
-            <label for="name">Nombre completo</label><br>
             <input
               type="text"
               name="name"
@@ -30,13 +28,11 @@
               class="input"
             /> <br> <br>
 
-            <label for="mail">Correo electronico</label><br>
             <input type="text" name="mail" placeholder="Correo" class="input" /> <br> <br>
 
             <label for="file">Foto de perfil</label><br>
             <input type="file" name="file" class="input" id="img-input" /> <br><br>
 
-            <label for="pass">Contraseña</label><br>
             <input
               type="password"
               name="pass"
@@ -44,7 +40,6 @@
               class="input"
             /> <br><br>
 
-            <label for="pass2">Confirmar contraseña</label><br>
             <input
               type="password"
               name="pass2"

@@ -1,4 +1,7 @@
-#mainPanel .cancion {
+main{
+}
+
+main .cancion {
     display: flex;
     align-items: center;
     width: 90%;
@@ -6,56 +9,57 @@
     overflow: hidden;
     background: none;
     margin-bottom: 15px;
+    margin-left: 50px;
     border-radius: 15px;
     transition: all 0.3s ease;
-  }
+}
   
-  #mainPanel .cancion:hover {
+main .cancion:hover {
     background-color: rgba(0, 0, 0, 0.1);
-  }
+}
   
-  #mainPanel img {
+main img {
     height: 100%;
-  }
+}
   
-  #mainPanel .songInfo {
+main .songInfo {
     display: flex;
     align-items: center;
     height: 100%;
     width: 65%;
     padding-left: 15px;
-  }
+}
   
-  #mainPanel .nameAndAlbum{
+main .nameAndAlbum{
     width: 65%;
-  }
+}
   
-  #mainPanel .nombre {
+main .nombre {
     font-weight: 700; /* Cambiar colo de letra */
     display: flex;
     align-items: center;
     height: 50%;
-  }
+}
   
-  #mainPanel .album {
-    color: rgb(63, 63, 63); /* Cambiar colo de letra */
+main .album {
+    color: rgb(168, 168, 168); /* Cambiar colo de letra */
     display: flex;
     align-items: center;
     height: 50%;
     font-weight: 100; /* Cambiar colo de letra */
-  }
+}
   
-  #mainPanel .artista {
-    color: rgb(63, 63, 63); /* Cambiar colo de letra */
+main .artista {
+    color: rgb(168, 168, 168); /* Cambiar colo de letra */
     width: 35%;
     font-weight: 100; /* Cambiar colo de letra */
-  }
+}
   
-  #mainPanel #play {
+main #play {
     margin-left: 80px;
-  }
+}
   
-  #mainPanel .botones {
+main .botones {
     width: 50px;
     height: 50px;
     margin-left: 10px;
@@ -63,37 +67,37 @@
     background-color: transparent;
     border: none;
     padding: 5px 5px;
-  }
+}
   
-  #mainPanel button span {
+main button span {
     width: 100%;
     height: 100%;
     opacity: 30%;
     display: flex;
     align-items: center;
-  }
+}
   
-  #mainPanel button:hover span {
+main button:hover span {
     opacity: 1;
-  }
+}
   
-  #mainPanel #icon3{
+main #icon3{
     width: 25px;
     height: 25px;
-  }
+}
   
-  #mainPanel #icon1, #mainPanel #icon2{
+main #icon1, main #icon2{
     width: 100%;
     height: 100%;
-  }
+}
   
-  #mainPanel #main{
-    width: 100%;
-    padding-left: 50px;
-    padding-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  #mainPanel h2{
+main h2{
     margin-bottom: 20px;
-  }
+    margin-top: calc(16vh + 50px);
+    margin-left: 50px;
+}
+
+main #error{
+    margin-left: 50px;
+    margin-top: 40px;
+}

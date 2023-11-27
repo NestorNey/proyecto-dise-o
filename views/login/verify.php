@@ -13,11 +13,11 @@
     $data = mysqli_fetch_array($fetch);
 
     if(!isset($data['UserName'])){
-        Error('ERROR: El usuario no existe');
+        Error('Error: El usuario no existe');
     }
 
     if(!password_verify($pass,$data['Contrasena'])){
-        Error('contraseña incorrecta');
+        Error('Error: Las credenciales son invalidas');
     }
 
     // session_start();
@@ -27,22 +27,9 @@
     $_SESSION['imgName'] = $data['Img'];
     $_SESSION['plan'] = $data['Plan'];
     header('location: ./?screen=profile');
-?>
 
-<?php
     function Error($error){
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <section id="section-main">
-            <h2><?php echo $error; ?></h2>
-        </section>
-    </body>
-    </html>
-<?php
-    exit(); }
+        header("location: ./?screen=login/login&message=$error");
+        exit();
+    }
 ?>

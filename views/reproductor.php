@@ -2,24 +2,21 @@
   require 'conection.php';
   require './api/listManager.php';
 
-  if(isset($_GET['songName'])){
-    $songName = $_GET['songName'];
+  if(isset($_GET['songId'])){
+    $songId = $_GET['songId'];
   }else{
-    $songName = 'No se encontro la canción solicitada';
+    $songId = 'No se encontro la canción solicitada';
   }
 
-  if($songName == 'null'){
+  if($songId == 'null'){
     header('location: ./?screen=results&input=');
   }else{
     
-  $sql = "SELECT * FROM musica WHERE NombreC='$songName'";
+  $sql = "SELECT * FROM musica WHERE ID='$songId'";
 
   $fetch = mysqli_query($conection, $sql);
   $song = mysqli_fetch_array($fetch);
 
-  $songName = str_replace(".mp3", "", $songName);
-  $songName = str_replace($song['ID'], "", $songName);
-  
   if(isset($_SESSION['user'])){
     $songToSave = array(
       "ID" => $song['ID'],
@@ -41,7 +38,7 @@
 <section id="player-section">
   <article class="music-player-container">
     <div class="title-music-container">
-        <h4 class="song-title"><?php echo $songName; ?></h4>
+        <h4 class="song-title"><?php echo $song['NombreC']; ?></h4>
         <span class="song-author"><?php echo $song['Artista']; ?></span>
     </div>
     <div class="controls-music-container">
@@ -55,7 +52,7 @@
             <span class="time-left" id="SongLength"></span>
         </div>
     </div>
-    <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['NombreC']; ?>"></audio>
+    <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['ID']; ?>/song.mp3"></audio>
     <div class="main-song-controls">
         <img 
           src="./static/img/icons/backward-step-svgrepo-com.svg" 
@@ -72,7 +69,7 @@
           alt="next" 
           class="icon" 
           id="changeSongForward" 
-          onclick="changeSongForward('<?php echo $song['NombreC']; ?>')"
+          onclick="changeSongForward('<?php echo $song['ID']; ?>')"
         >
     </div>
   </article>

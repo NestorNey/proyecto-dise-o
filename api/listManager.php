@@ -35,16 +35,21 @@ function getList($list, $userName){
     return mysqli_fetch_array($query);
 }
 
-function _setList($listName, $userList, $userName){
+function _setList($listName, $userList, $userName) {
     global $conection;
 
     $userList = json_encode($userList);
 
-    $sql = "UPDATE users
-    SET $listName = '$userList'
-    WHERE UserName = '$userName';";
+    $sql = "UPDATE users SET $listName = ? WHERE UserName = ?";
+    
+    // Preparar la consulta
+    $stmt = mysqli_prepare($conection, $sql);
 
-    $query = mysqli_query($conection, $sql);
+    // Vincular los parámetros
+    mysqli_stmt_bind_param($stmt, "ss", $userList, $userName);
+
+    // Ejecutar la consulta
+    $query = mysqli_stmt_execute($stmt);
 
     if(!$query){
         echo "ERROR";

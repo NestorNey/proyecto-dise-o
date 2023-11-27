@@ -1,49 +1,39 @@
-* {
-  padding: 0;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+main{
+  padding-top: 50px;
 }
 
-#main-panel {
-  background: transparent;
-
-  text-align: center;
-  margin-top: 40px;
-}
-
-#subtitulo {
+main #subtitulo {
   color: white;
   font-size: 1.6rem;
   font-weight: bold;
 }
 
-#main-panel .img-up {
+main .img-up {
   overflow: hidden;
   display: inline-block;
 }
 
-#main-panel #can_img {
+main #can_img {
   width: 230px;
   height: 230px;
   border-radius: 16px;
 }
 
-#main-panel #subir_imagen {
+main #subir_imagen {
   width: 50px;
   height: 50px;
 }
 
-#main-panel .info {
+main .info {
   text-align: center;
   width: 620px;
-  height: 320px;
-  background: linear-gradient(30deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+  background: linear-gradient(30deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
   float: right;
   border-radius: 15px;
 }
 
 
-#main-panel .cancion {
+main .cancion {
   width: 800px;
   height: 10%;
   float: right;
@@ -56,21 +46,29 @@
   align-items: center;
 }
 
-#main-panel .inputs-subir {
-  width: 480px;
-  padding: 8px;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  border-radius: 8px;
-  outline: none;
-  margin-top: 15px;
-  color: white;
-  font-size: 13px;
+main .inputs-subir {
+    background: unset;
+    border: unset;
+    border-bottom: 2px solid white;
+    font-size: 15px;
+    padding: 5px;
+    width: 500px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
 }
 
+main .inputs-subir::placeholder{
+  color: rgb(209, 209, 209);
+}
 
-#main-panel #play {
+main .inputs-subir:focus{
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+main #play {
   width: 50px;
   float: left;
   margin-left: 20px;
@@ -78,16 +76,16 @@
   border: none;
 }
 
-#main-panel #barrita {
+main #barrita {
   width: 650px;
   margin-left: 40px;
 }
 
-#main-panel #tiempo {
+main #tiempo {
   margin-left: 10px;
 }
 
-#main-panel .botones {
+main .botones {
   float: left;
   width: 50%;
   margin-left: 200px;
@@ -98,40 +96,49 @@
 
 
 
-#main-panel .superior {
+main .superior {
   display: flex;
   justify-content: space-around;
   align-content: center;
 }
 
-#main-panel #subtitulo {
+main #subtitulo {
   display: inline;
 }
 
-#Recarga {
-  margin-top: 10px;
-  border: dashed 1px red;
+main #archivo{
+  margin-top: 60px;
+}
+
+main #Recarga {
+  border: solid 1px white;
   width: 250px;
   height: 250px;
 }
 
-.uploaded-img {
+main .uploaded-img {
   width: 250px;
 }
 
-#main-panel #btn_subir {
-  padding: 6px;
-  border-radius: 12px;
-  font-size: 20px;
-  background: linear-gradient(30deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
-  color: white;
-  transition: 1s;
-  transform-origin: center;
+main #btn_subir {
+  background-color: #082032d0;
+    color: white;
+
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    margin-top: 5vh;
+    border: unset;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-#main-panel #btn_subir:hover {
+main #btn_subir:hover{
+  background-color: #082032;
+}
 
-  transform: rotateZ(360deg);
-  padding: 15px;
-  position: relative;
+main #tiempoCont{
+  margin-bottom: 20px;
 }

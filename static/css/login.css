@@ -1,30 +1,113 @@
-#general{
+main #general{
     text-align: center;
     display: flex;
     justify-content: center;
-
-    
+    align-items: center;
 }
 
-.input{
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 12px;
+main #form-insert{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+main .input{
+    background: unset;
+    border: unset;
+    border-bottom: 2px solid white;
+    font-size: 15px;
     padding: 5px;
     width: 500px;
-    
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
 }
 
-#general label{
+main .input::placeholder{
+    color: rgb(209, 209, 209);
+}
+
+main .input:focus{
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+main #general label{
     margin-top: 15px;
 }
 
-#inputs-labels{
+main #inputs-labels{
     text-align: left;
     width: 500px;
 
 }
 
-h2{
+main .red-btn{
+    background-color: #082032d0;
+    color: white;
+
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5vh;
+    border: unset;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main .red-btn:hover{
+    background-color: #082032;
+}
+
+main h2{
     margin-top: 20px;
 }
+
+main #message{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: fixed;
+    width: 400px;
+    padding: 30px;
+
+    background-color: rgba(8, 32, 50, 0.692);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+
+    transform: translateY(100vh);
+}
+
+main #message.show{
+    animation: showMessage 3s;
+}
+
+main #messageP{
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+main #message img{
+    width: 70px;
+}
+
+
+@keyframes showMessage {
+    0% {
+        transform: translateY(100vh);
+    }
+    20%{
+        transform: translateY(0vh);
+    }
+    80% {
+        transform: translateY(0vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+  }
+

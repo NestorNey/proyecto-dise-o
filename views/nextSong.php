@@ -1,25 +1,25 @@
 <?php
     require_once('./conection.php');
 
-    if(isset($_GET['songName'])){
-        $songNameRep = $_GET['songName'];
+    if(isset($_GET['songId'])){
+        $songIdRep = $_GET['songId'];
     }
 
     // if(isInPlaylist()){
-        RandomNextSong($songNameRep, $conection);
+        RandomNextSong($songIdRep, $conection);
     // }
 
-    function RandomNextSong($songNameRep, $conection){
+    function RandomNextSong($songIdRep, $conection){
         $sql = "SELECT * FROM musica ORDER BY RAND() LIMIT 1;";
         $fetch = mysqli_query($conection, $sql);
         $song = mysqli_fetch_array($fetch);
 
-        while($song['NombreC'] == $songNameRep){
+        while($song['ID'] === $songIdRep){
             $sql = "SELECT * FROM musica ORDER BY RAND() LIMIT 1;";
             $fetch = mysqli_query($conection, $sql);
             $song = mysqli_fetch_array($fetch);
         }
 
-        header('location: ./?screen=reproductor&songName='.$song['NombreC']);
+        header('location: ./?screen=reproductor&songId='.$song['ID']);
     }
 ?>

@@ -14,7 +14,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php echo $rootDir; ?>/static/css/header.css">
 </head>
-<header>
     <header>
         <section id="logoSec">
             <h1 id="logo">Music Hub</h1>
@@ -29,10 +28,8 @@
         </section>
         <section id="porfile">
             <?php if(!isset($_SESSION['user'])){ ?>
-                <section>
                     <button onclick="redirectLogin()" class="sessionBtn">Iniciar sesión</button>
                     <button onclick="redirectSignin()" class="sessionBtn">Registrarse</button>
-                </section>
             <?php }else { ?>
                 <section id="porfileMenu" onclick="openPorfileMenu()"> 
                     <img src="<?php echo $rootDir; ?>/static/img/users/<?php echo $_SESSION['imgName']; ?>" alt="">
@@ -55,5 +52,4 @@
             <?php } ?>
         </section>
     </header>
-</header>
 <script type="text/javascript" src="<?php echo $rootDir; ?>/static/js/header.js"></script>

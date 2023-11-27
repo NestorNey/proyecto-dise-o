@@ -1,60 +1,43 @@
-<?php 
-    require_once('./conection.php');
+<?php
+require_once('./conection.php');
 
-    $Nombre_cancion = $_POST['name'];
-    $Artista = $_POST['artista'];
-    $Descripcion = $_POST['desc'];
-    $Genero = $_POST['genero'];
-    $Album = $_POST['album'];
-    
+// Restablecer el valor de autoincremento para la tabla (ejecutar la sentencia SQL)
+$reset_autoincrement = "ALTER TABLE musica AUTO_INCREMENT = 1";
+mysqli_query($conection, $reset_autoincrement);
 
-    $buscador_id = "SELECT ID FROM `musica`";
-    $Viene_viene = mysqli_query($conection,  $buscador_id);
-    
+$Nombre_cancion = mysqli_real_escape_string($conection, $_POST['name']);
+$Artista = mysqli_real_escape_string($conection, $_POST['artista']);
+$Descripcion = mysqli_real_escape_string($conection, $_POST['desc']);
+$Genero = mysqli_real_escape_string($conection, $_POST['genero']);
+$Album = mysqli_real_escape_string($conection, $_POST['album']);
 
-    while ($lista_id = mysqli_fetch_array($Viene_viene)){
+// Obtener el último ID insertado
+$buscador_id = "SELECT MAX(ID) AS max_id FROM `musica`";
+$resultado = mysqli_query($conection, $buscador_id);
+$fila = mysqli_fetch_assoc($resultado);
+$ultimo_lista = $fila['max_id'] + 1;
 
-        $ultimo_lista = end($lista_id);
-    }
+$carpeta_destino = './static/songs/' . $ultimo_lista . '/';
+if (!file_exists($carpeta_destino)) {
+    mkdir($carpeta_destino, 0777, true);
+}
 
-    $ultimo_lista = $ultimo_lista + 1;
+$archivo_subido_img = $carpeta_destino . 'album.' . pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION);
+move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido_img);
+$imgName = 'album.' . pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION);
 
+$cancion_subida = $carpeta_destino . 'song.' . pathinfo($_FILES['archivo_audio']['name'], PATHINFO_EXTENSION);
+move_uploaded_file($_FILES['archivo_audio']['tmp_name'], $cancion_subida);
+$songName = 'song.' . pathinfo($_FILES['archivo_audio']['name'], PATHINFO_EXTENSION);
 
-    $carpeta_destino = './static/img/canciones/';
+$instruccion = "INSERT INTO musica (NombreC, Artista, Genero, Descripcion, Album, img) VALUES (?, ?, ?, ?, ?, ?)";
+$stmt = mysqli_prepare($conection, $instruccion);
+mysqli_stmt_bind_param($stmt, "ssssss", $_POST['name'], $Artista, $Genero, $Descripcion, $Album, $imgName);
+$resultado = mysqli_stmt_execute($stmt);
 
-    if (!file_exists($carpeta_destino)) {
-        mkdir($carpeta_destino, 0777, true);
-    }
-
-    $archivo_subido = $carpeta_destino . $ultimo_lista . basename($_FILES['archivo']['name']);
-    
-    move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
-
-    $imgName = $ultimo_lista . basename($_FILES['archivo']['name']);
-
-    $carpeta_canciones = './static/songs/';
-
-    if (!file_exists($carpeta_canciones)) {
-        mkdir($carpeta_canciones, 0777, true);
-    }
-
-    $cancion_subida = $carpeta_canciones . $ultimo_lista . basename($_FILES['archivo_audio']['name']);
-
-    move_uploaded_file($_FILES['archivo_audio']['tmp_name'], $cancion_subida);
-
-    $songName = $ultimo_lista . basename($_FILES['archivo_audio']['name']);
-
-    $instruccion = "INSERT INTO musica (NombreC, Artista, Genero, Descripcion, Album, img) VALUES ('$songName', '$Artista', '$Genero', '$Descripcion', '$Album', '$imgName')";
-
-    $mandadero = mysqli_query($conection, $instruccion);
-
-    if($mandadero){
-        // echo('Si');
-        header('location: ./?screen=reproductor&songName=' . $songName);
-    }
-    else{
-        echo('No');
-    }
-
-    
+if($resultado){
+    header('location: ./?screen=reproductor&songId=' . $ultimo_lista);
+} else {
+    echo('No');
+}
 ?>
