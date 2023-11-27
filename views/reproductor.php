@@ -81,6 +81,7 @@
 <?php
   if(isset($_SESSION['plan'])){
     if($_SESSION['plan'] === 'Gratuito') echo "<script> shouldShowAdd(true) </script>";
+    else echo "<script> shouldShowAdd(false) </script>";
   }else{
     echo "<script> shouldShowAdd(true) </script>";
   }
