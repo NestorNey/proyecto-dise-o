@@ -27,6 +27,8 @@
     );
     
     addSongToList("UltimasEscuchadas", $songToSave, $_SESSION['user']);
+    
+    
   }
   
 ?>
@@ -34,12 +36,12 @@
 <head>
   <link rel="stylesheet" href="./static/css/reproductor.css">
 </head>
-
 <section id="player-section">
+  <img id="songImg" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['ID']; ?>/<?php echo $song['img']; ?>" alt="">
   <article class="music-player-container">
     <div class="title-music-container">
-        <h4 class="song-title"><?php echo $song['NombreC']; ?></h4>
-        <span class="song-author"><?php echo $song['Artista']; ?></span>
+        <h4 class="song-title" id="song-title"><?php echo $song['NombreC']; ?></h4>
+        <span class="song-author" id="song-author"><?php echo $song['Artista']; ?></span>
     </div>
     <div class="controls-music-container">
         <div class="progress-song-container">
@@ -76,5 +78,10 @@
 </section>
 
 <script src="<?php echo $rootDir; ?>/static/js/reproductor.js"></script>
+<?php
+  if($_SESSION['plan'] === 'Gratuito'){
+      echo "<script> shouldShowAdd(true) </script>";
+  }
+?>
 
 <?php } ?>
