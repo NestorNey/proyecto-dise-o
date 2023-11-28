@@ -3,7 +3,8 @@
   require_once './api/listManager.php';
 
   if(!isset($_SESSION['user'])){
-    header('location: ./?screen=noSesion');
+    header('location: ./?screen=/login/login&message=Para acceder a tu historial necesitas iniciar sesion');
+    exit();
   }
 
   if(isset($_GET['input'])){

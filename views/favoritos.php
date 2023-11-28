@@ -3,7 +3,7 @@
     require_once 'api/listManager.php';
 
     if(!isset($_SESSION['user'])){
-        header('location: ./?screen=noSesion');
+      header('location: ./?screen=/login/login&message=Para acceder a favoritos necesitas iniciar sesion');
     }
 
     $cancionesFav = getList('Favoritos', $_SESSION['user']);

@@ -5,7 +5,7 @@ const audio = document.querySelector("audio"),
   plus10 = document.getElementById("Plus10"),
   back10 = document.getElementById("Back10");
 
-var areInAdd = true;
+var areInAdd = false;
 
 const calculateTime = (secs) => {
   const minutes = Math.floor(secs / 60),
@@ -23,7 +23,7 @@ function setProgress() {
   document.querySelector(".progress").style.width = percentage + "%";
 }
 
-function configureAudio(){
+function configureAudio() {
   if (audio.readyState > 0) {
     displayDuration();
     currentTime.innerHTML = calculateTime(audio.currentTime);
@@ -32,47 +32,51 @@ function configureAudio(){
       displayDuration();
     });
   }
-  
+
   setTimeout(playPause.click(), 1000);
 }
 
 function changeSongForward(songName) {
-  if(areInAdd) return
+  if (areInAdd) return;
   window.location = `./?screen=nextSong&songId=${songName}`;
 }
 function changeSongBack() {
-  if(areInAdd) return
+  if (areInAdd) return;
   window.location = `./?screen=previousSong`;
 }
 
-function shouldShowAdd(boolean){
+function shouldShowAdd(boolean) {
   setTimeout(() => {
-    if(boolean){
+    if (boolean) {
+      areInAdd = true;
+
       let songToShowThen = audio.getAttribute("src"),
-          titleToShowThen = document.getElementById("song-title").innerText,
-          authorToShowThen = document.getElementById("song-author").innerText,
-          imgToShowThen = document.getElementById("songImg").getAttribute("src");
+        titleToShowThen = document.getElementById("song-title").innerText,
+        authorToShowThen = document.getElementById("song-author").innerText,
+        imgToShowThen = document.getElementById("songImg").getAttribute("src");
 
-      songLength.innerText = '30'
-      audio.setAttribute("src", `./static/add/add.mp3`)
-      document.getElementById("song-title").innerText = "Anuncio"
-      document.getElementById("song-author").innerText = ""
-      document.getElementById("songImg").setAttribute("src", "./static/add/banner.png")
+      songLength.innerText = "30";
+      audio.setAttribute("src", `./static/add/add.mp3`);
+      document.getElementById("song-title").innerText = "Anuncio";
+      document.getElementById("song-author").innerText = "";
+      document
+        .getElementById("songImg")
+        .setAttribute("src", "./static/add/banner.png");
 
-      audio.addEventListener('ended', () => {
-        if(!areInAdd) return
+      audio.addEventListener("ended", () => {
+        if (!areInAdd) return;
 
-        document.getElementById("song-title").innerText = titleToShowThen
-        document.getElementById("song-author").innerText = authorToShowThen
-        document.getElementById("songImg").setAttribute("src", imgToShowThen)
-        audio.setAttribute("src", songToShowThen)
+        document.getElementById("song-title").innerText = titleToShowThen;
+        document.getElementById("song-author").innerText = authorToShowThen;
+        document.getElementById("songImg").setAttribute("src", imgToShowThen);
+        audio.setAttribute("src", songToShowThen);
 
-        areInAdd = false
+        areInAdd = false;
 
-        configureAudio()
+        configureAudio();
       });
     }
-    configureAudio()
+    configureAudio();
   }, 1000);
 }
 
@@ -87,12 +91,18 @@ playPause.addEventListener("click", () => {
 });
 
 plus10.addEventListener("click", () => {
-  if(areInAdd) return
-  audio.currentTime += 10
+  if (areInAdd) {
+    return;
+  }
+  console.log("ola");
+  audio.currentTime += 10;
 });
 back10.addEventListener("click", () => {
-  if(areInAdd) return
-  audio.currentTime -= 10
+  if (areInAdd) {
+    return;
+  }
+  console.log("ola2");
+  audio.currentTime -= 10;
 });
 
 audio.ontimeupdate = function () {

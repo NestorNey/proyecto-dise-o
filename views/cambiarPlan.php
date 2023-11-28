@@ -3,15 +3,21 @@
 
     if(!isset($_SESSION['user'])){
         header('location: ./?screen=login/login');
-    } else {
-        $plan = $_GET['planG'];
-    
-        $userName = $_SESSION['user'];
-        $sql = "UPDATE users SET Plan = '$plan' WHERE UserName='$userName';";
-
-        $fetch = mysqli_query($conection, $sql);
-
-        $_SESSION['plan'] = $plan;
-        header('location: ./?screen=gracias');
+        exit();
     }
+
+    if(!isset($_POST['planG'])){
+        header('location: ./?screen=login/login');
+        exit();
+    }
+    
+    $plan = $_POST['planG'];
+
+    $userName = $_SESSION['user'];
+    $sql = "UPDATE users SET Plan = '$plan' WHERE UserName='$userName';";
+
+    $fetch = mysqli_query($conection, $sql);
+
+    $_SESSION['plan'] = $plan;
+    header('location: ./?screen=gracias');
 ?>
