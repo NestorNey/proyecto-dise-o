@@ -29,3 +29,4 @@
   </section>
 
   <script type="text/javascript" src="./static/js/message.js"></script>
+  <script type="text/javascript" src="./static/js/formValidation.js"></script>

@@ -5,9 +5,7 @@
         $songIdRep = $_GET['songId'];
     }
 
-    // if(isInPlaylist()){
-        RandomNextSong($songIdRep, $conection);
-    // }
+    RandomNextSong($songIdRep, $conection);
 
     function RandomNextSong($songIdRep, $conection){
         $sql = "SELECT * FROM musica ORDER BY RAND() LIMIT 1;";

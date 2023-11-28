@@ -4,14 +4,12 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./static/css/Cancion-style.css">
+    <link rel="stylesheet" href="./static/css/message.css">
     <title>Subir cancion</title>
 </head>
-<body>
         <form action="./?screen=formulario/subir" method="post" enctype="multipart/form-data">
             <section class="superior">
                 <article class="img-up">
@@ -64,8 +62,7 @@
                     placeholder="Album"><br>
 
                     <label for="archivo_audio">Archivo mp3</label><br>
-                    <input type="file" name="archivo_audio" id="archivo_audio" class="inputs-subir" placeholder="Escoger canción">
-                    <p id="tiempoCont">Duracion: <span id="tiempo">0:00 - 4:30</span></p>
+                    <input onchange="validateFile(event, 'audio')" type="file" name="archivo_audio" id="archivo_audio" class="inputs-subir" placeholder="Escoger canción">
                 </article>
             </section>
 
@@ -73,5 +70,8 @@
                 <input id="btn_subir" type="submit" value="Subir">
             </section>
         </form>
-</body>
-</html>
+    <div id="message">
+      <img src="./static/img/icons/error.png">
+      <p id="messageP">Error: Usuario no econtrado</p>
+    </div>
+<script type="text/javascript" src="./static/js/formValidation.js"></script>

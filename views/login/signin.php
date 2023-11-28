@@ -29,7 +29,7 @@
             <input type="text" name="mail" placeholder="Correo" class="input" /> <br> <br>
 
             <label for="file">Foto de perfil</label><br>
-            <input type="file" name="file" class="input" id="img-input" /> <br><br>
+            <input onchange="validateFile(event, 'image')" type="file" name="file" class="input" id="img-input" /> <br><br>
 
             <input
               type="password"
@@ -60,3 +60,4 @@
       
 
   <script type="text/javascript" src="./static/js/message.js"></script>
+  <script type="text/javascript" src="./static/js/formValidation.js"></script>
