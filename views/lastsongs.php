@@ -50,7 +50,7 @@
       /></span>
     </button>
     <button class="botones" id="like">
-      <span><img src="./static/img/icons/favorite.svg" class="icons" id="icon3" /></span>
+      <span><img src="./static/img/icons/favorite.svg" class="icons" id="icon3" onclick="document.location = './?screen=addFavorito&songId=<?php echo $value['ID']; ?>'"/></span>
     </button>
     </section>
   <?php }}?>

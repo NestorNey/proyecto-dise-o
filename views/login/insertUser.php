@@ -3,11 +3,11 @@
 
     require_once 'conection.php';
 
-    if (isset($_FILES['file'])){
+    if (isset($_FILES['file']) && $_FILES['file']['name'] != ''){
         $imgName = $_FILES['file']['name'];
         move_uploaded_file($_FILES['file']['tmp_name'], 'static/img/users/'.$imgName);
     }else {
-        $imgName = 'default.jpg';
+        $imgName = 'default.jpeg';
     }
 
     $name = $_POST['name'];
@@ -37,22 +37,9 @@
     $_SESSION['imgName'] = $imgName;
     $_SESSION['plan'] = 'Gratuito';
     header('location: ./?screen=main');
-?>
 
-<?php
     function Error($error){
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <section id="section-main">
-            <h2><?php echo $error; ?></h2>
-        </section>
-    </body>
-    </html>
-<?php
-    exit(); }
+        header("location: ./?screen=login/signin&message=$error");
+        exit();
+    }
 ?>

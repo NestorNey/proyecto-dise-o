@@ -16,7 +16,7 @@
 </head>
     <header>
         <section id="logoSec">
-            <h1 id="logo">Music Hub</h1>
+            <img src="./static/img/Logo.png" id="logo" alt="Music Hub">
         </section>
         <section id="search">
             <?php if($showSearchBar){ ?>

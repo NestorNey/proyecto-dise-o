@@ -1,4 +1,4 @@
-main{
+main {
   padding-top: 50px;
 }
 
@@ -27,11 +27,14 @@ main #subir_imagen {
 main .info {
   text-align: center;
   width: 620px;
-  background: linear-gradient(30deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+  background: linear-gradient(
+    30deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1)
+  );
   float: right;
   border-radius: 15px;
 }
-
 
 main .cancion {
   width: 800px;
@@ -47,23 +50,23 @@ main .cancion {
 }
 
 main .inputs-subir {
-    background: unset;
-    border: unset;
-    border-bottom: 2px solid white;
-    font-size: 15px;
-    padding: 5px;
-    width: 500px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: white;
+  background: unset;
+  border: unset;
+  border-bottom: 2px solid white;
+  font-size: 15px;
+  padding: 5px;
+  width: 500px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: white;
 }
 
-main .inputs-subir::placeholder{
+main .inputs-subir::placeholder {
   color: rgb(209, 209, 209);
 }
 
-main .inputs-subir:focus{
+main .inputs-subir:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -87,14 +90,14 @@ main #tiempo {
 
 main .botones {
   float: left;
-  width: 50%;
-  margin-left: 200px;
-  margin-top: 40px;
+  width: 100%;
 
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
-
-
 
 main .superior {
   display: flex;
@@ -106,7 +109,7 @@ main #subtitulo {
   display: inline;
 }
 
-main #archivo{
+main #archivo {
   margin-top: 60px;
 }
 
@@ -122,23 +125,20 @@ main .uploaded-img {
 
 main #btn_subir {
   background-color: #082032d0;
-    color: white;
+  color: white;
 
-    width: 100px;
-    height: 35px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 50px;
-    margin-top: 5vh;
-    border: unset;
-    cursor: pointer;
-    border-radius: 5px;
+  width: 200px;
+  height: 50px;
+
+  border: unset;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-main #btn_subir:hover{
+main #btn_subir:hover {
   background-color: #082032;
 }
 
-main #tiempoCont{
+main #tiempoCont {
   margin-bottom: 20px;
 }

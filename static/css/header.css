@@ -35,6 +35,10 @@ header #logoSec {
   justify-content: left;
 }
 
+header #logo {
+  height: 130%;
+}
+
 header #search {
   justify-content: center;
   width: 34%;
@@ -116,7 +120,8 @@ header #porfile #porfileMenu.opened {
   background-color: #082032;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 
-  transition: width 0.8s, height 0.8s 0.6s, background-color 0.5s 0.6s, box-shadow 0.5s 0.6s;
+  transition: width 0.8s, height 0.8s 0.6s, background-color 0.5s 0.6s,
+    box-shadow 0.5s 0.6s;
 }
 
 header #porfile #porfileMenu.opened > img {
