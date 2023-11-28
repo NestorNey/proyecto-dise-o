@@ -21,10 +21,7 @@
     <section class="main-section">
         <h3 class="main-h3">Plan Mensual</h3>
         <ul>
-            <li class="main-li">Escucha sin anuncios</li>
-            <li class="main-li">Cuenta personalizable</li>
-            <li class="main-li">Sube música sin limite de espacio</li>
-            <li class="main-li">Acceso a todas las funciones</li>
+            <li class="main-li">Escucha tu musica favorita sin anuncios</li>
         </ul>
         <p class="precio">$19.99 al mes</p>
         <form action="./?screen=cambiarPlan" method="POST">
@@ -36,10 +33,7 @@
     <section class="main-section">
         <h3 class="main-h3">Plan Anual</h3>
         <ul>
-            <li class="main-li">Escucha sin anuncios</li>
-            <li class="main-li">Cuenta personalizable</li>
-            <li class="main-li">Sube música sin limite de espacio</li>
-            <li class="main-li">Acceso a todas las funciones</li>
+            <li class="main-li">Escucha tu musica favorita sin anuncios</li>
         </ul>
         <p class="precio">$179.99 al año</p>
         <form action="./?screen=cambiarPlan" method="POST">
