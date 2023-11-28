@@ -80,8 +80,11 @@
 
 <script src="<?php echo $rootDir; ?>/static/js/reproductor.js"></script>
 <?php
-  if($_SESSION['plan'] === 'Gratuito'){
-      echo "<script> shouldShowAdd(true) </script>";
+  if(isset($_SESSION['plan'])){
+    if($_SESSION['plan'] === 'Gratuito') echo "<script> shouldShowAdd(true) </script>";
+    else echo "<script> shouldShowAdd(false) </script>";
+  }else{
+    echo "<script> shouldShowAdd(true) </script>";
   }
 ?>
 

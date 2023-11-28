@@ -60,5 +60,13 @@
         <img id="right" src="./static/img/icons/arrow.svg">
     </section>
 </section>
+<section id="uploadYourSong">
+    <img src="./static/img/author.png" alt="">
+    <div id="textSide">
+        <h3>¿Eres compositor?</h3>
+        <p>Sube tus propias canciones en MusicHub!</p>
+        <button onclick="document.location = './?screen=formulario/SubirCancion'">Subir cancion</button>
+    </div>
+</section>
 <script defer src="./static/js/carrusel.js" type="text/javascript"></script>
 <script src="<?php echo $rootDir; ?>/static/js/songSelector.js"></script>

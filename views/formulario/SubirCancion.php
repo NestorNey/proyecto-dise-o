@@ -1,7 +1,6 @@
 <?php
     if(!isset($_SESSION['user'])){
-        header('location: ./?screen=noSesion');
-        exit();
+        header('location: ./?screen=/login/login&message=Para subir una cancion necesitas inicar sesion');
     }
 ?>
 
