@@ -54,7 +54,7 @@
             <span class="time-left" id="SongLength"></span>
         </div>
     </div>
-    <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['ID']; ?>/song.mp3"></audio>
+    <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['ID']; ?>/song"></audio>
     <div class="main-song-controls">
         <img 
           src="./static/img/icons/backward-step-svgrepo-com.svg" 
