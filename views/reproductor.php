@@ -63,9 +63,9 @@
           id="changeSongBack"
           onclick="changeSongBack()"
         >
-        <img src="./static/img/icons/backward-step-svgrepo-com.svg" alt="prev" class="icon" id="Back10">
+        <img src="./static/img/icons/backward-10.svg" alt="prev" class="icon" id="Back10">
         <img src="./static/img/icons/play1.svg" alt="play" class="icon" id="PlayPause">
-        <img src="./static/img/icons/forward-step-svgrepo-com.svg" alt="next" class="icon" id="Plus10">
+        <img src="./static/img/icons/forward-10.svg" alt="next" class="icon" id="Plus10">
         <img 
           src="./static/img/icons/forward-step-svgrepo-com.svg" 
           alt="next" 
@@ -73,6 +73,7 @@
           id="changeSongForward" 
           onclick="changeSongForward('<?php echo $song['ID']; ?>')"
         >
+        <img src="./static/img/icons/heart.svg" alt="Agregar a favoritos" id="heart" onclick="document.location = './?screen=addFavorito&songId=<?php echo $song['ID']; ?>'">
     </div>
   </article>
 </section>

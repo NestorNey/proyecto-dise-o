@@ -1,11 +1,10 @@
 /* Font color */
-.carousel-sec{
+.carousel-sec {
   color: white;
 }
-.carousel-sec .artistAndAlbum{
+.carousel-sec .artistAndAlbum {
   color: rgb(168, 168, 168);
 }
-
 
 .carousel-sec {
   width: 100%;
@@ -16,28 +15,28 @@
   padding-bottom: 50px;
 }
 
-.carousel-sec .title{
+.carousel-sec .title {
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
-.carousel-sec #interCarousel{
+.carousel-sec #interCarousel {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex:content;
+  flex: content;
   width: auto;
   overflow: hidden;
 }
 
-.carousel-sec #hiddenCart.show{
+.carousel-sec #hiddenCart.show {
   transform: translateX(-50%);
   filter: brightness(50%);
 }
 
-.carousel-sec .cSong{
+.carousel-sec .cSong {
   flex-shrink: 0;
   width: 18vw;
   height: 360px;
@@ -48,22 +47,22 @@
   overflow: hidden;
   filter: brightness(50%) blur(1px);
   background-color: #382f5000;
-  transition: transform 0s, filter 0s, background-color .5s;
+  transition: transform 0s, filter 0s, background-color 0.5s;
 }
 
-.carousel-sec .cSong .songImage{
+.carousel-sec .cSong .songImage {
   width: 100%;
   height: auto;
 }
 
-.carousel-sec .cSong h2{
+.carousel-sec .cSong h2 {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 5px;
   font-size: 20px;
 }
 
-.carousel-sec .cSong .artistAndAlbum{
+.carousel-sec .cSong .artistAndAlbum {
   word-spacing: 2px;
   width: 100%;
   padding-left: 10px;
@@ -71,48 +70,49 @@
   font-size: 15px;
 }
 
-.carousel-sec .cSong .icon{
+.carousel-sec .cSong .icon {
   position: absolute;
   margin-left: 3.6vw;
   margin-top: 3.6vw;
   width: 10vw;
   opacity: 0;
-  transition: transform .5s, opacity 1s;
+  transition: transform 0.5s, opacity 1s;
 }
 
-.carousel-sec .cSong:hover{
+.carousel-sec .cSong:hover {
   background-color: #1e512852;
 }
 
-.carousel-sec .cSong:hover .icon{
+.carousel-sec .cSong:hover .icon {
   opacity: 1;
+  cursor: pointer;
 }
 
-.carousel-sec .cSong .icon:hover{
+.carousel-sec .cSong .icon:hover {
   transform: scale(1.1);
 }
 
-.carousel-sec .cSong.right{
+.carousel-sec .cSong.right {
   transform: translateX(26vw);
   transition: transform 1s, filter 1s;
 }
 
-.carousel-sec .cSong.left{
+.carousel-sec .cSong.left {
   transform: translateX(-26vw);
   transition: transform 1s, filter 1s;
 }
 
-.carousel-sec .cSong.show{
+.carousel-sec .cSong.show {
   filter: brightness(100%);
   transition: transform 1s, filter 1s;
 }
 
-.carousel-sec .cSong.hidde{
+.carousel-sec .cSong.hidde {
   filter: brightness(50%);
   transition: transform 1s, filter 1s;
 }
 
-.carousel-sec #right{
+.carousel-sec #right {
   position: absolute;
   right: 25px;
   height: 60px;
@@ -120,7 +120,7 @@
   cursor: pointer;
 }
 
-.carousel-sec #left{
+.carousel-sec #left {
   position: absolute;
   left: 55px;
   height: 60px;

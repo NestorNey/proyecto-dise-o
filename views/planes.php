@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION['user'])){
+        header('location: ./?screen=noSesion');
+        exit();
+    }
+?>
+
 <head>
     <link rel="stylesheet" href="./static/css/planes.css">
 </head>

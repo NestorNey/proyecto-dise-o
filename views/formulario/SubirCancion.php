@@ -1,6 +1,7 @@
 <?php
     if(!isset($_SESSION['user'])){
-        header('location: ./?screen=/login/login');
+        header('location: ./?screen=noSesion');
+        exit();
     }
 ?>
 
