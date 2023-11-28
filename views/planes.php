@@ -8,10 +8,16 @@
 <head>
     <link rel="stylesheet" href="./static/css/planes.css">
 </head>
+<section id="presentPlan">
+    <div id="textSide">
+        <h3>Contrata MusicHub Premiun</h3>
+        <p>¡Escucha todas tus canciones favoritas sin interrupciones o anuncios fastidiosos!</p>
+        <button onclick="document.location = './?screen=planes#planes'">Ver planes</button>
+    </div>
+    <img src="./static/img/plan.png" alt="">
+</section> 
 
-    <section>
-        <img src="./static/img/icons/individualy.svg" class="main-icon">
-    </section>
+<section id="planes">
     <section class="main-section">
         <h3 class="main-h3">Plan Mensual</h3>
         <ul>
@@ -27,9 +33,6 @@
         </form>
     </section>
 
-    <section>
-        <img src="./static/img/icons/duo.svg" class="main-icon">
-    </section>
     <section class="main-section">
         <h3 class="main-h3">Plan Anual</h3>
         <ul>
@@ -44,3 +47,5 @@
             <input type="submit" class="main-button" value="Comprar">
         </form>
     </section>
+</section>
+    

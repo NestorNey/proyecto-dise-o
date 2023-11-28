@@ -17,18 +17,33 @@ main {
     box-shadow: 0px 2px 8px rgba(0,0,0,0.35);
 }
 
+#planes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.main-section form{
+    margin-top: 10px;
+}
+
 .main-h3 {
     color: #ffffff;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 45px;
 }
 
 .precio {
     font-weight: bold;
-    color: #eb6c6c;
+    color: #4caf50;
     margin: 2vh 0;
 }
 
 .main-button {
-    background-color: #4caf50;
+    background-color: #082032d0;
     color: #ffffff;
     padding: 10px;
     border: none;
@@ -38,15 +53,57 @@ main {
 }
 
 .main-button:hover {
-    background-color: #27d430;
+    background-color: #082032;
 }
 
 .main-li {
     text-align: left;
     padding: 5px;
+    margin-bottom: 25px;
 }
 
 .main-icon {
     margin-top: 5vh;
     height: 50px;
+}
+
+.main-section ul p{
+    text-align: left;
+}
+
+#presentPlan{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: fit-content;
+    height: 84vh;
+    padding: 30px;
+}
+  
+#textSide{
+    height: min-content;
+    width: 40vw;
+    text-align: center;
+    padding: 20px;
+}
+  
+#textSide h3{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+  
+#textSide button {
+    background-color: #082032d0;
+    color: white;
+  
+    width: 100px;
+    height: 35px;
+    margin-top: 20px;
+    border: unset;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+#textSide button:hover {
+    background-color: #082032;
 }
