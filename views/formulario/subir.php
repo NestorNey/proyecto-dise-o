@@ -1,6 +1,10 @@
 <?php
 require_once('./conection.php');
 
+if($_POST['name'] == '' || $_POST['artista'] == ''){
+    Error('Los campos "Nombre de la cancion" y "artista" no pueden estar vacios');
+}
+
 // Restablecer el valor de autoincremento para la tabla (ejecutar la sentencia SQL)
 $reset_autoincrement = "ALTER TABLE musica AUTO_INCREMENT = 1";
 mysqli_query($conection, $reset_autoincrement);
@@ -22,13 +26,19 @@ if (!file_exists($carpeta_destino)) {
     mkdir($carpeta_destino, 0777, true);
 }
 
-$archivo_subido_img = $carpeta_destino . 'album.' . pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION);
-move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido_img);
-$imgName = 'album.' . pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION);
-
+if ($_FILES['archivo_audio']['name'] == ''){
+    Error('El campo de la cancion no puede estar vacio');
+}
 $cancion_subida = $carpeta_destino . 'song.' . pathinfo($_FILES['archivo_audio']['name'], PATHINFO_EXTENSION);
 move_uploaded_file($_FILES['archivo_audio']['tmp_name'], $cancion_subida);
 $songName = 'song.' . pathinfo($_FILES['archivo_audio']['name'], PATHINFO_EXTENSION);
+
+if ($_FILES['archivo']['name'] == ''){
+    Error('El campo de imagen no puede estar vacio');
+}
+$archivo_subido_img = $carpeta_destino . 'album.' . pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION);
+move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido_img);
+$imgName = 'album.' . pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION);
 
 $instruccion = "INSERT INTO musica (NombreC, Artista, Genero, Descripcion, Album, img) VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conection, $instruccion);
@@ -38,6 +48,12 @@ $resultado = mysqli_stmt_execute($stmt);
 if($resultado){
     header('location: ./?screen=reproductor&songId=' . $ultimo_lista);
 } else {
-    echo('No');
+    Error('Hubo un error al insertar los datos, intentelo de nuevo mas tarde');
 }
+
+function Error($error){
+    header("location: ./?screen=formulario/subirCancion&message=$error");
+    exit();
+}
+
 ?>

@@ -7,6 +7,8 @@ const audio = document.querySelector("audio"),
 
 var areInAdd = false;
 
+console.log(audio);
+
 const calculateTime = (secs) => {
   const minutes = Math.floor(secs / 60),
     seconds = Math.floor(secs % 60),

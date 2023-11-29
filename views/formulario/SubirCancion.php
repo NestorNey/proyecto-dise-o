@@ -69,6 +69,11 @@
             <section class="botones">
                 <input id="btn_subir" type="submit" value="Subir">
             </section>
+
+            <div id="message">
+                <img src="./static/img/icons/error.png">
+                <p id="messageP">Error: Usuario no econtrado</p>
+            </div>
         </form>
     <div id="message">
       <img src="./static/img/icons/error.png">
