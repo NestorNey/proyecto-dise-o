@@ -5,6 +5,7 @@ const audio = document.querySelector("audio"),
   plus10 = document.getElementById("Plus10"),
   back10 = document.getElementById("Back10");
 
+var idr;
 var areInAdd = false;
 
 console.log(audio);
@@ -23,6 +24,14 @@ const displayDuration = () => {
 function setProgress() {
   let percentage = (audio.currentTime / audio.duration) * 100;
   document.querySelector(".progress").style.width = percentage + "%";
+  if (percentage === 100) {
+    changeSongForward(idr);
+  }
+}
+
+function getID(id) {
+  var idr = id;
+  return idr;
 }
 
 function configureAudio() {
@@ -58,7 +67,7 @@ function shouldShowAdd(boolean) {
         imgToShowThen = document.getElementById("songImg").getAttribute("src");
 
       songLength.innerText = "30";
-      audio.setAttribute("src", `./static/add/add.mp3`);
+      audio.setAttribute("src", `./static/add/ad.mp3`);
       document.getElementById("song-title").innerText = "Anuncio";
       document.getElementById("song-author").innerText = "";
       document

@@ -86,6 +86,7 @@
   }else{
     echo "<script> shouldShowAdd(true) </script>";
   }
+  echo "<script> getID('".$song['ID']."'); </script>";
 ?>
 
 <?php } ?>
