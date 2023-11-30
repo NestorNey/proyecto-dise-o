@@ -69,4 +69,4 @@
     </div>
 </section>
 <script defer src="./static/js/carrusel.js" type="text/javascript"></script>
-<script src="<?php echo $rootDir; ?>/static/js/songSelector.js"></script>
+<script src="./static/js/songSelector.js"></script>

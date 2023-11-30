@@ -45,7 +45,7 @@ function updateSongDisplay() {
     carts[i + 4].title.innerText = song.nombre
     carts[i + 4].img.setAttribute(
       "src",
-      `http://localhost:80/proyecto-dise-o/static/songs/${song.id}/${song.img}`
+      `./static/songs/${song.id}/${song.img}`
     )
     carts[i + 4].playicon.setAttribute(
       "onclick", 

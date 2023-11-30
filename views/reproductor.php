@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="./static/css/reproductor.css">
 </head>
 <section id="player-section">
-  <img id="songImg" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['ID']; ?>/<?php echo $song['img']; ?>" alt="">
+  <img id="songImg" src="/static/songs/<?php echo $song['ID']; ?>/<?php echo $song['img']; ?>" alt="">
   <article class="music-player-container">
     <div class="title-music-container">
         <h4 class="song-title" id="song-title"><?php echo $song['NombreC']; ?></h4>
@@ -54,7 +54,7 @@
             <span class="time-left" id="SongLength"></span>
         </div>
     </div>
-    <audio controls preload="metadata" src="<?php echo $rootDir; ?>/static/songs/<?php echo $song['ID']; ?>/song"></audio>
+    <audio controls preload="metadata" src="/static/songs/<?php echo $song['ID']; ?>/song"></audio>
     <div class="main-song-controls">
         <img 
           src="./static/img/icons/backward-step-svgrepo-com.svg" 
@@ -78,7 +78,7 @@
   </article>
 </section>
 
-<script src="<?php echo $rootDir; ?>/static/js/reproductor.js"></script>
+<script src="./static/js/reproductor.js"></script>
 <?php
   if(isset($_SESSION['plan'])){
     if($_SESSION['plan'] === 'Gratuito') echo "<script> shouldShowAdd(true) </script>";

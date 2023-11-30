@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php echo $rootDir; ?>/static/css/header.css">
+    <link rel="stylesheet" href="./static/css/header.css">
 </head>
     <header>
         <section id="logoSec">
@@ -21,7 +21,7 @@
         <section id="search">
             <?php if($showSearchBar){ ?>
             <div id="searchBar">
-                <img src="<?php echo $rootDir; ?>/static/img/icons/search.svg">
+                <img src="./static/img/icons/search.svg">
                 <input type="text" onkeydown="redirectSearch(event)" id="search-input">
             </div>
             <?php }?>
@@ -32,7 +32,7 @@
                     <button onclick="redirectSignin()" class="sessionBtn">Registrarse</button>
             <?php }else { ?>
                 <section id="porfileMenu" onclick="openPorfileMenu()"> 
-                    <img src="<?php echo $rootDir; ?>/static/img/users/<?php echo $_SESSION['imgName']; ?>" alt="">
+                    <img src="./static/img/users/<?php echo $_SESSION['imgName']; ?>" alt="">
                     <br>
                     <br>
                     <h3><?php echo $_SESSION['user']; ?></h3>
@@ -52,4 +52,4 @@
             <?php } ?>
         </section>
     </header>
-<script type="text/javascript" src="<?php echo $rootDir; ?>/static/js/header.js"></script>
+<script type="text/javascript" src="./static/js/header.js"></script>

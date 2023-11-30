@@ -36,7 +36,7 @@
       <p class="artista"><?php echo $cancionesPorNombre['Artista']; ?></p>
     </section>
 
-    <button class="botones" id="play" onclick="songClick('<?php echo $rootDir; ?>', '<?php echo $cancionesPorNombre['ID']; ?>')">
+    <button class="botones" id="play" onclick="songClick('./', '<?php echo $cancionesPorNombre['ID']; ?>')">
       <span
         ><img src="./static/img/icons/play.svg" class="icons" id="icon1"
       /></span>
@@ -47,4 +47,4 @@
     </section>
   <?php } ?>
 </article>
-<script src="<?php echo $rootDir; ?>/static/js/songSelector.js"></script>
+<script src="./static/js/songSelector.js"></script>
